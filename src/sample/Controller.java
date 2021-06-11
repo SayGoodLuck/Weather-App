@@ -6,21 +6,18 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.ArrayList;
 
 public class Controller {
 
   private static final String API_KEY = "900ea254740cee343805d46750147cdc";
 
-  private String defaultCity = "Kyiv";
-  private String metrics = "\u2103";
+  private static final String defaultCity = "Kyiv";
+  private static final String units = "\u2103";
 
   @FXML private Button getData;
 
@@ -65,38 +62,38 @@ public class Controller {
 
       if (!output.isEmpty()) {
         var json = new JSONObject(output);
-        temp_info.setText(json.getJSONObject("main").getInt("temp") + metrics);
+        temp_info.setText(json.getJSONObject("main").getInt("temp") + units);
         temp_feels.setText("Feels like: " + json.getJSONObject("main").getDouble("feels_like"));
-        temp_max.setText("Max: " + json.getJSONObject("main").getInt("temp_max") + metrics);
-        temp_min.setText("Min: " + json.getJSONObject("main").getInt("temp_min") + metrics);
+        temp_max.setText("Max: " + json.getJSONObject("main").getInt("temp_max") + units);
+        temp_min.setText("Min: " + json.getJSONObject("main").getInt("temp_min") + units);
         temp_pressure.setText("Pressure: " + json.getJSONObject("main").getInt("pressure"));
         temp_city.setText(city + ", " + json.getJSONObject("sys").getString("country"));
 
         if (json.has("weather")) {
           var result = json.getJSONArray("weather");
           var iconCode = result.getJSONObject(0).getString("icon");
-          var image = new Image("http://openweathermap.org/img/w/" + iconCode + ".png");
+          var image = new Image("https://openweathermap.org/img/w/" + iconCode + ".png");
           weather_condition.setImage(image);
         }
-
       }
       System.out.println(output);
     }
   }
 
-  private static String getUrlContent(String urlAdress) {
+  private static String getUrlContent(String urlAddress) {
     var content = new StringBuilder();
 
     try {
-      URL url = new URL(urlAdress);
+      var url = new URL(urlAddress);
       URLConnection urlConn = url.openConnection();
 
-      var bufferedReader =
-          new BufferedReader(new InputStreamReader(urlConn.getInputStream()));
+      var bufferedReader = new BufferedReader(new InputStreamReader(urlConn.getInputStream()));
       String line;
+
       while ((line = bufferedReader.readLine()) != null) {
         content.append(line + "\n");
       }
+
       bufferedReader.close();
     } catch (Exception ex) {
       System.out.println("City not found");
