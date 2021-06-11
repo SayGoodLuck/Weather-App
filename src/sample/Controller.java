@@ -15,9 +15,8 @@ import java.net.URLConnection;
 public class Controller {
 
   private static final String API_KEY = "900ea254740cee343805d46750147cdc";
-
-  private static final String defaultCity = "Kyiv";
-  private static final String units = "\u2103";
+  private static final String DEFAULT_CITY = "Kyiv";
+  private static final String UNITS = "\u2103";
 
   @FXML private Button getData;
 
@@ -40,7 +39,7 @@ public class Controller {
   @FXML
   void initialize() {
 
-    getContent(defaultCity);
+    getContent(DEFAULT_CITY);
 
     getData.setOnAction(
         event -> {
@@ -62,19 +61,17 @@ public class Controller {
 
       if (!output.isEmpty()) {
         var json = new JSONObject(output);
-        temp_info.setText(json.getJSONObject("main").getInt("temp") + units);
-        temp_feels.setText("Feels like: " + json.getJSONObject("main").getDouble("feels_like"));
-        temp_max.setText("Max: " + json.getJSONObject("main").getInt("temp_max") + units);
-        temp_min.setText("Min: " + json.getJSONObject("main").getInt("temp_min") + units);
+        temp_info.setText(json.getJSONObject("main").getInt("temp") + UNITS);
+        temp_feels.setText("Feels like: " + json.getJSONObject("main").getInt("feels_like") + UNITS);
+        temp_max.setText("Max: " + json.getJSONObject("main").getInt("temp_max") + UNITS);
+        temp_min.setText("Min: " + json.getJSONObject("main").getInt("temp_min") + UNITS);
         temp_pressure.setText("Pressure: " + json.getJSONObject("main").getInt("pressure"));
         temp_city.setText(city + ", " + json.getJSONObject("sys").getString("country"));
 
-        if (json.has("weather")) {
-          var result = json.getJSONArray("weather");
-          var iconCode = result.getJSONObject(0).getString("icon");
-          var image = new Image("https://openweathermap.org/img/w/" + iconCode + ".png");
-          weather_condition.setImage(image);
-        }
+        var result = json.getJSONArray("weather");
+        var iconCode = result.getJSONObject(0).getString("icon");
+        var image = new Image("https://openweathermap.org/img/w/" + iconCode + ".png");
+        weather_condition.setImage(image);
       }
       System.out.println(output);
     }

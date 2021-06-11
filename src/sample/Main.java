@@ -4,7 +4,11 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+import java.io.InputStream;
+import java.util.Objects;
 
 public class Main extends Application {
 
@@ -15,6 +19,7 @@ public class Main extends Application {
     primaryStage.setScene(new Scene(root, 1920, 1080));
     primaryStage.setResizable(false);
     primaryStage.setMaximized(true);
+    primaryStage.getIcons().add(new Image("/sample/assets/icon.png"));
     primaryStage.show();
   }
 
