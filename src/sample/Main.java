@@ -16,10 +16,13 @@ public class Main extends Application {
   public void start(Stage primaryStage) throws Exception {
     Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
     primaryStage.setTitle("Weather");
-    primaryStage.setScene(new Scene(root, 1920, 1080));
+    var scene = new Scene(root, 1280, 720);
+    scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("application.css")).toExternalForm());
+    primaryStage.setScene(scene);
     primaryStage.setResizable(false);
-    primaryStage.setMaximized(true);
+    primaryStage.setMaximized(false);
     primaryStage.getIcons().add(new Image("/sample/assets/icon.png"));
+
     primaryStage.show();
   }
 
