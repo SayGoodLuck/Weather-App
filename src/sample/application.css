@@ -2,24 +2,28 @@
     font-family: Montserrat;
     src: url('/sample/assets/fonts/Montserrat-Regular.ttf');
 }
+
 .root {
     -fx-font-family: Montserrat;
 }
+
 .days {
     -fx-background-color: rgba(255, 255, 255, 100);
     -fx-background-radius: 10, 10, 10, 10;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
 
 }
+
 .daysTab{
 
 }
+
 .features {
     -fx-background-color: rgba(255, 255, 255, 100);
     -fx-background-radius: 10, 10, 10, 10;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
-
 }
+
 #temp_info {
     -fx-font-family: Montserrat;
     -fx-background-color: rgba(255, 255, 255, 100);

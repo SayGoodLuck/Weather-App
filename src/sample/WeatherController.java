@@ -6,6 +6,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import org.json.JSONObject;
 import java.io.BufferedReader;
@@ -18,7 +19,7 @@ public class WeatherController {
   private static final String API_KEY = "900ea254740cee343805d46750147cdc";
   private static final String DEFAULT_CITY = "Kyiv";
   private static final String UNITS = "\u2103";
-
+  //https://tile.openweathermap.org/map/clouds_new/10/50/30.png?appid=900ea254740cee343805d46750147cdc
   @FXML private Button getData;
 
   @FXML private TextField city;
@@ -76,8 +77,8 @@ public class WeatherController {
         var image = new Image("https://openweathermap.org/img/w/" + iconCode + ".png");
         weather_condition.setImage(image);
       }
-
-
+      //WebEngine webEngine = new WebEngine(getClass().getResource("OpenWeatherMapLayer.html").toString());
+      //map.getEngine(webEngine);
       System.out.println(output);
     }
   }
