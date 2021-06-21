@@ -28,40 +28,26 @@
             <children>
                 <Text id="temp_info" fx:id="temp_info" layoutX="22.0" layoutY="280.0" strokeType="OUTSIDE"
                       strokeWidth="0.0" text="15" wrappingWidth="229.00000205263495" AnchorPane.topAnchor="231.0">
-                    <font>
-                        <Font name="Gadugi" size="45.0"/>
-                    </font>
                 </Text>
                 <Text id="temp_feels" fx:id="temp_feels" layoutX="22.0" layoutY="413.0" strokeType="OUTSIDE"
                       strokeWidth="0.0" text="Feels like 20C" wrappingWidth="154.5937271118164">
-                    <font>
-                        <Font name="Gadugi" size="20.0"/>
-                    </font>
                 </Text>
                 <Text id="temp_max" fx:id="temp_max" layoutX="143.0" layoutY="461.0" strokeType="OUTSIDE"
                       strokeWidth="0.0" text="Max" textAlignment="CENTER" wrappingWidth="118.59375">
-                    <font>
-                        <Font name="Segoe UI Bold Italic" size="20.0"/>
-                    </font>
+
                 </Text>
                 <Text id="temp_min" fx:id="temp_min" layoutX="-7.0" layoutY="460.0" strokeType="OUTSIDE"
                       strokeWidth="0.0" text="Min" textAlignment="CENTER" wrappingWidth="112.59375">
-                    <font>
-                        <Font name="Segoe UI Bold Italic" size="20.0"/>
-                    </font>
+
                 </Text>
                 <Text id="temp_pressure" fx:id="temp_pressure" layoutX="22.0" layoutY="371.0" strokeType="OUTSIDE"
                       strokeWidth="0.0" text="1200" wrappingWidth="154.59373474121094">
-                    <font>
-                        <Font name="Gadugi" size="20.0"/>
-                    </font>
+
                 </Text>
                 <Text id="city" fx:id="temp_city" layoutX="73.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0"
                       text="Kyiv" wrappingWidth="154.59371602535248" AnchorPane.rightAnchor="157.40628397464752"
                       AnchorPane.topAnchor="295.1015625">
-                    <font>
-                        <Font name="Gadugi" size="24.0"/>
-                    </font>
+
                 </Text>
                 <ImageView id="weather_condition" fx:id="weather_condition" fitHeight="46.0" fitWidth="48.0"
                            layoutX="25.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true"/>
@@ -84,18 +70,67 @@
                 </HBox>
             </children>
         </AnchorPane>
-        <HBox layoutX="400.0" layoutY="90.0"  prefHeight="100.0" prefWidth="851.0" spacing="30">
+        <HBox layoutX="400.0" layoutY="90.0" prefHeight="100.0" prefWidth="851.0" spacing="30">
             <padding>
                 <Insets left="30" right="30"/>
             </padding>
             <children>
-                <StackPane id="weather_first_day" styleClass="days" prefHeight="100.0" prefWidth="77.0"/>
-                <StackPane id="weather_second_day" styleClass="days" prefHeight="100.0" prefWidth="77.0"/>
-                <StackPane id="weather_third_day" styleClass="days" prefHeight="100.0" prefWidth="77.0"/>
-                <StackPane id="weather_fourth_day" styleClass="days" prefHeight="100.0" prefWidth="77.0"/>
-                <StackPane id="weather_fifth_day" styleClass="days" prefHeight="100.0" prefWidth="77.0"/>
-                <StackPane id="weather_six_day" styleClass="days" prefHeight="100.0" prefWidth="77.0"/>
-                <StackPane id="weather_seven_day" styleClass="days" prefHeight="100.0" prefWidth="77.0"/>
+                <VBox fx:id="firstDay" id="weather_first_day" styleClass="days" prefHeight="100.0" prefWidth="77.0"
+                      alignment="CENTER">
+                    <children>
+                        <Text id="firstDayOfWeek" fx:id="firstDayOfWeek"/>
+                        <ImageView id="firstDayImg" fx:id="firstDayImg" fitHeight="46.0" fitWidth="48.0"/>
+                        <Text id="firstDayTempMinMax" fx:id="firstDayMinMax"/>
+                    </children>
+                </VBox>
+                <VBox fx:id="secondDay" id="weather_second_day" styleClass="days" prefHeight="100.0"
+                      prefWidth="77.0" alignment="CENTER">
+                    <children>
+                        <Text id="secondDayOfWeek" fx:id="secondDayOfWeek"/>
+                        <ImageView id="secondDayImg" fx:id="secondDayImg" fitHeight="46.0" fitWidth="48.0"/>
+                        <Text id="secondDayTempMinMax" fx:id="secondDayMinMax"/>
+                    </children>
+                </VBox>
+                <VBox fx:id="thirdDay" id="weather_third_day" styleClass="days" prefHeight="100.0"
+                      prefWidth="77.0" alignment="CENTER">
+                    <children>
+                        <Text id="thirdDayOfWeek" fx:id="thirdDayOfWeek"/>
+                        <ImageView id="thirdDayImg" fx:id="thirdDayImg" fitHeight="46.0" fitWidth="48.0"/>
+                        <Text id="thirdDayTempMinMax" fx:id="thirdDayMinMax"/>
+                    </children>
+                </VBox>
+                <VBox fx:id="fourthDay" id="weather_fourth_day" styleClass="days" prefHeight="100.0"
+                      prefWidth="77.0" alignment="CENTER">
+                    <children>
+                        <Text id="fourthDayOfWeek" fx:id="fourthDayOfWeek"/>
+                        <ImageView id="fourthDayImg" fx:id="fourthDayImg" fitHeight="46.0" fitWidth="48.0"/>
+                        <Text id="fourthDayTempMinMax" fx:id="fourthDayMinMax"/>
+                    </children>
+                </VBox>
+                <VBox fx:id="fifthDay" id="weather_fifth_day" styleClass="days" prefHeight="100.0"
+                      prefWidth="77.0" alignment="CENTER">
+                    <children>
+                        <Text id="fifthDayOfWeek" fx:id="fifthDayOfWeek"/>
+                        <ImageView id="fifthDayImg" fx:id="fifthDayImg" fitHeight="46.0" fitWidth="48.0"/>
+                        <Text id="fifthDayTempMinMax" fx:id="fifthDayMinMax"/>
+                    </children>
+                </VBox>
+                <VBox fx:id="sixDay" id="weather_six_day" styleClass="days" prefHeight="100.0" prefWidth="77.0"
+                      alignment="CENTER">
+                    <children>
+                        <Text id="sixDayOfWeek" fx:id="sixDayOfWeek"/>
+                        <ImageView id="sixDayImg" fx:id="sixDayImg" fitHeight="46.0" fitWidth="48.0"/>
+                        <Text id="sixDayTempMinMax" fx:id="sixDayMinMax"/>
+                    </children>
+                </VBox>
+                <VBox fx:id="sevenDay" id="weather_seven_day" styleClass="days" prefHeight="100.0"
+                      prefWidth="77.0" alignment="CENTER">
+                    <children>
+                        <Text id="sevenDayOfWeek" fx:id="sevenDayOfWeek"/>
+                        <ImageView id="sevenDayImg" fx:id="sevenDayImg" fitHeight="46.0" fitWidth="48.0"/>
+                        <Text id="sevenDayTempMinMax" fx:id="sevenDayMinMax"/>
+                    </children>
+                </VBox>
             </children>
         </HBox>
         <GridPane layoutX="400.0" layoutY="300" prefHeight="400" prefWidth="500" hgap="30" vgap="30">
@@ -103,12 +138,18 @@
                 <Insets left="30" right="30"/>
             </padding>
             <children>
-                <StackPane GridPane.rowIndex="0" GridPane.columnIndex="0" id="uv_index" styleClass="features" prefHeight="100" prefWidth="150"/>
-                <StackPane GridPane.rowIndex="0" GridPane.columnIndex="1" id="wind_info" styleClass="features" prefHeight="100" prefWidth="150"/>
-                <StackPane GridPane.rowIndex="0" GridPane.columnIndex="2" id="sunrise_sunset" styleClass="features" prefHeight="100" prefWidth="150"/>
-                <StackPane GridPane.rowIndex="1" GridPane.columnIndex="0" id="humidity" styleClass="features" prefHeight="100" prefWidth="150"/>
-                <StackPane GridPane.rowIndex="1" GridPane.columnIndex="1" id="visibility" styleClass="features" prefHeight="100" prefWidth="150"/>
-                <StackPane GridPane.rowIndex="1" GridPane.columnIndex="2" id="min_max_temp" styleClass="features" prefHeight="100" prefWidth="150"/>
+                <StackPane GridPane.rowIndex="0" GridPane.columnIndex="0" id="uv_index" styleClass="features"
+                           prefHeight="100" prefWidth="150"/>
+                <StackPane GridPane.rowIndex="0" GridPane.columnIndex="1" id="wind_info" styleClass="features"
+                           prefHeight="100" prefWidth="150"/>
+                <StackPane GridPane.rowIndex="0" GridPane.columnIndex="2" id="sunrise_sunset" styleClass="features"
+                           prefHeight="100" prefWidth="150"/>
+                <StackPane GridPane.rowIndex="1" GridPane.columnIndex="0" id="humidity" styleClass="features"
+                           prefHeight="100" prefWidth="150"/>
+                <StackPane GridPane.rowIndex="1" GridPane.columnIndex="1" id="visibility" styleClass="features"
+                           prefHeight="100" prefWidth="150"/>
+                <StackPane GridPane.rowIndex="1" GridPane.columnIndex="2" id="min_max_temp" styleClass="features"
+                           prefHeight="100" prefWidth="150"/>
             </children>
         </GridPane>
 
