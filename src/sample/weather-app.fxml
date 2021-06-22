@@ -1,10 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sample.Controller"
-            prefHeight="400.0" prefWidth="600.0">
-    <Label>Hello World!</Label>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="root" VBox.vgrow="ALWAYS"
+            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.WeatherController">
+    <AnchorPane id="left_bar" prefHeight="727.0" prefWidth="330.0" styleClass="leftBar">
+        <Text id="temp_info" fx:id="tempInfo" layoutX="22.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="15" wrappingWidth="229.00000205263495" AnchorPane.topAnchor="231.0"/>
+        <Text id="temp_feels" fx:id="tempFeels" layoutX="22.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Feels like 20" wrappingWidth="154.5937271118164"/>
+        <HBox layoutX="26.0" layoutY="39.0" maxHeight="35.0" prefHeight="16.0" prefWidth="281.0">
+            <TextField id="city" fx:id="city" focusTraversable="false" prefHeight="35.0" prefWidth="255.0"
+                       promptText="search for places ..."/>
+            <Button id="getData" fx:id="getData" mnemonicParsing="false" styleClass="button">
+                <graphic>
+                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@assets/1024px-Search_Icon.svg.png"/>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" layoutX="22.0" layoutY="283.0" prefHeight="58.0" prefWidth="281.0" spacing="15">
+            <ImageView id="weather_condition" fx:id="weatherCondition" fitHeight="46.0" fitWidth="46.0"
+                       pickOnBounds="true" preserveRatio="true"/>
+            <Text id="temp_city" fx:id="tempCity" strokeType="OUTSIDE" strokeWidth="0.0" text="Kyiv"
+                  wrappingWidth="196.59371602535248"/>
+        </HBox>
+        <HBox layoutX="22.0" layoutY="370.0" prefHeight="58.0" prefWidth="217.0" alignment="CENTER_LEFT">
+            <Text id="currentDayOfWeek" fx:id="currentDayOfWeek" strokeType="OUTSIDE" strokeWidth="0.0"/>
+            <Text id="currentTime" fx:id="currentTime" strokeType="OUTSIDE" strokeWidth="0.0"/>
+        </HBox>
+    </AnchorPane>
+    <HBox layoutX="400.0" layoutY="140.0" prefHeight="130.0" prefWidth="851.0" spacing="40" AnchorPane.rightAnchor="40">
+
+        <VBox id="weather_first_day" alignment="CENTER" prefHeight="130.0" prefWidth="100.0" styleClass="days">
+            <Text id="firstDayOfWeek" fx:id="firstDayOfWeek"/>
+            <ImageView id="firstDayImg" fx:id="firstDayImg" fitHeight="46.0" fitWidth="48.0"/>
+            <Text id="firstDayTempMinMax" fx:id="firstDayMinMax"/>
+        </VBox>
+        <VBox id="weather_second_day" alignment="CENTER" prefHeight="130.0" prefWidth="100.0" styleClass="days">
+            <Text id="secondDayOfWeek" fx:id="secondDayOfWeek"/>
+            <ImageView id="secondDayImg" fx:id="secondDayImg" fitHeight="46.0" fitWidth="48.0"/>
+            <Text id="secondDayTempMinMax" fx:id="secondDayMinMax"/>
+        </VBox>
+        <VBox id="weather_third_day" alignment="CENTER" prefHeight="130.0" prefWidth="100.0" styleClass="days">
+            <Text id="thirdDayOfWeek" fx:id="thirdDayOfWeek"/>
+            <ImageView id="thirdDayImg" fx:id="thirdDayImg" fitHeight="46.0" fitWidth="48.0"/>
+            <Text id="thirdDayTempMinMax" fx:id="thirdDayMinMax"/>
+        </VBox>
+        <VBox id="weather_fourth_day" alignment="CENTER" prefHeight="130.0" prefWidth="100.0" styleClass="days">
+            <Text id="fourthDayOfWeek" fx:id="fourthDayOfWeek"/>
+            <ImageView id="fourthDayImg" fx:id="fourthDayImg" fitHeight="46.0" fitWidth="48.0"/>
+            <Text id="fourthDayTempMinMax" fx:id="fourthDayMinMax"/>
+        </VBox>
+        <VBox id="weather_fifth_day" alignment="CENTER" prefHeight="130.0" prefWidth="100.0" styleClass="days">
+            <Text id="fifthDayOfWeek" fx:id="fifthDayOfWeek"/>
+            <ImageView id="fifthDayImg" fx:id="fifthDayImg" fitHeight="46.0" fitWidth="48.0"/>
+            <Text id="fifthDayTempMinMax" fx:id="fifthDayMinMax"/>
+        </VBox>
+        <VBox id="weather_six_day" alignment="CENTER" prefHeight="130.0" prefWidth="100.0" styleClass="days">
+            <Text id="sixDayOfWeek" fx:id="sixDayOfWeek"/>
+            <ImageView id="sixDayImg" fx:id="sixDayImg" fitHeight="46.0" fitWidth="48.0"/>
+            <Text id="sixDayTempMinMax" fx:id="sixDayMinMax"/>
+        </VBox>
+        <VBox id="weather_seven_day" alignment="CENTER" prefHeight="130.0" prefWidth="100.0" styleClass="days">
+            <Text id="sevenDayOfWeek" fx:id="sevenDayOfWeek"/>
+            <ImageView id="sevenDayImg" fx:id="sevenDayImg" fitHeight="46.0" fitWidth="48.0"/>
+            <Text id="sevenDayTempMinMax" fx:id="sevenDayMinMax"/>
+        </VBox>
+    </HBox>
+    <GridPane alignment="CENTER" hgap="30" layoutX="400.0" layoutY="300" vgap="30" AnchorPane.bottomAnchor="0.0">
+        <padding>
+            <Insets bottom="40" left="30" right="30" top="30"/>
+        </padding>
+
+        <VBox id="description" prefHeight="100" prefWidth="130.0" styleClass="features" GridPane.columnIndex="0"
+              GridPane.rowIndex="0" alignment="CENTER">
+            <Text text="Description"/>
+            <Text fx:id="description"/>
+        </VBox>
+        <VBox id="wind_status" alignment="CENTER" prefHeight="100" prefWidth="130.0" styleClass="features"
+              GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Text id="wind_status_label" text="Wind Status"/>
+            <Text id="wind_speed" fx:id="windSpeed"/>
+        </VBox>
+        <VBox id="sunrise_sunset" alignment="CENTER" prefHeight="100" prefWidth="130.0" styleClass="features"
+              GridPane.columnIndex="2" GridPane.rowIndex="0">
+            <Text id="sunrise_sunset_label"/>
+            <Text id="sunrise_label" text="Sunrise"/>
+            <Text id="sunrise" fx:id="sunrise"/>
+            <Text id="sunset_label" text="Sunset"/>
+            <Text id="sunset" fx:id="sunset"/>
+        </VBox>
+        <VBox id="humidity" prefHeight="100" prefWidth="130.0" styleClass="features" GridPane.columnIndex="0"
+              GridPane.rowIndex="1" alignment="CENTER">
+            <Text text="Humidity"/>
+            <Text fx:id="humidity"/>
+        </VBox>
+        <VBox id="visibility" prefHeight="100" prefWidth="130.0" styleClass="features" GridPane.columnIndex="1"
+              GridPane.rowIndex="1" alignment="CENTER">
+            <Text text="Visibility"/>
+            <Text fx:id="visibility"/>
+        </VBox>
+        <VBox id="min_max_temp" alignment="CENTER" prefHeight="100" prefWidth="130.0" styleClass="features"
+              GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Text text="Min &amp; Max temperature"/>
+            <Text id="temp_max" fx:id="tempMax" layoutX="143.0" layoutY="461.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                  text="Max" textAlignment="CENTER" wrappingWidth="118.59375"/>
+            <Text id="temp_min" fx:id="tempMin" layoutX="-7.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                  text="Min" textAlignment="CENTER" wrappingWidth="112.59375"/>
+        </VBox>
+        <columnConstraints>
+            <ColumnConstraints/>
+            <ColumnConstraints/>
+            <ColumnConstraints/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints/>
+            <RowConstraints/>
+        </rowConstraints>
+    </GridPane>
+    <WebView id="webView" fx:id="webView" layoutX="1000.0" layoutY="387.0" prefHeight="300.0" prefWidth="300.0"
+             AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="40.0"/>
 </AnchorPane>

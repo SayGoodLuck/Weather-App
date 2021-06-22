@@ -6,6 +6,4 @@ E
 O
 src/sample/assets/fonts/OFL.txt,6\9\69baabec6c03d6e6a4c13bee3d75062b8219e07c
 J
-src/sample/Controller.java,a\9\a952ee24ccaf329067caf45d8e61416ce808b0ea
-J
 src/sample/WeatherApp.java,3\2\322fe934b7b15a7999652231fbedb2e24700ba43

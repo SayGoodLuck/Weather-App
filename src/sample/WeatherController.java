@@ -6,8 +6,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-
-import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -17,6 +15,8 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Locale;
 
 public class WeatherController {
@@ -26,6 +26,23 @@ public class WeatherController {
   private static final String UNITS = "\u2103";
   private static final String CELSIUS = "\u00B0";
   private static final String METRIC = "metric";
+  private static final String SPEED = "km/h";
+
+  @FXML private Text description;
+
+  @FXML private Text humidity;
+
+  @FXML private Text currentTime;
+
+  @FXML private Text currentDayOfWeek;
+
+  @FXML private Text visibility;
+
+  @FXML private Text sunset;
+
+  @FXML private Text sunrise;
+
+  @FXML private Text windSpeed;
 
   @FXML private WebView webView;
 
@@ -100,7 +117,17 @@ public class WeatherController {
         });
   }
 
+  public void getDayTime() {
+    var formatter = new SimpleDateFormat("HH:mm");
+    var time = new Date(System.currentTimeMillis());
+
+    currentDayOfWeek.setText(LocalDate.now().getDayOfWeek().name() + ", ");
+    currentTime.setText(formatter.format(time));
+  }
+
   public void getContent(String city) {
+
+    getDayTime();
 
     if (!city.equals("")) {
       String output =
@@ -125,7 +152,7 @@ public class WeatherController {
         tempFeels.setText("Feels like: " + json.getJSONObject("main").getInt("feels_like") + UNITS);
         tempMax.setText("Max: " + json.getJSONObject("main").getInt("temp_max") + UNITS);
         tempMin.setText("Min: " + json.getJSONObject("main").getInt("temp_min") + UNITS);
-        tempPressure.setText("Pressure: " + json.getJSONObject("main").getInt("pressure"));
+        // tempPressure.setText("Pressure: " + json.getJSONObject("main").getInt("pressure"));
         tempCity.setText(city + ", " + json.getJSONObject("sys").getString("country"));
 
         var image = new Image(getImageUrl(json));
@@ -135,6 +162,15 @@ public class WeatherController {
         var url = this.getClass().getResource("OpenWeatherMapLayer.html");
         webEngine.load(url.toString());
 
+        windSpeed.setText(json.getJSONObject("wind").getFloat("speed") + SPEED);
+        sunrise.setText(convertTime(json.getJSONObject("sys").getLong("sunrise")));
+        sunset.setText(convertTime(json.getJSONObject("sys").getLong("sunset")));
+
+        var visionRange = json.getFloat("visibility") / 1000;
+        visibility.setText(String.valueOf(visionRange) + " km");
+
+        humidity.setText(json.getJSONObject("main").getInt("humidity") + "%");
+        description.setText(json.getJSONArray("weather").getJSONObject(0).getString("description"));
       }
 
       System.out.println(output);
@@ -217,6 +253,14 @@ public class WeatherController {
     var date = new java.util.Date(timeStamp * 1000);
 
     var simpleDateformat = new SimpleDateFormat("E", Locale.ENGLISH);
+
+    return simpleDateformat.format(date);
+  }
+
+  private String convertTime(long timeStamp) {
+    var date = new java.util.Date(timeStamp * 1000);
+
+    var simpleDateformat = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
 
     return simpleDateformat.format(date);
   }

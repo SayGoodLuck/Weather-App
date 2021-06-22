@@ -24,6 +24,7 @@
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTr9na88eN1iAHUTq_BDrolcrN3HdMKWQ">
     </script>
     <script>
+
         var map;
         var geoJSON;
         var request;
@@ -31,6 +32,8 @@
         var openWeatherMapKey = "900ea254740cee343805d46750147cdc"
 
         function initialize() {
+            var lat;
+            var lon;
             var mapOptions = {
                 zoom: 4,
                 center: new google.maps.LatLng(50, -50)
