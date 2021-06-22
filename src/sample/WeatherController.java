@@ -6,6 +6,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+
+import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -23,6 +25,9 @@ public class WeatherController {
   private static final String DEFAULT_CITY = "Kyiv";
   private static final String UNITS = "\u2103";
   private static final String CELSIUS = "\u00B0";
+  private static final String METRIC = "metric";
+
+  @FXML private WebView webView;
 
   @FXML private Text firstDayMinMax;
 
@@ -70,21 +75,19 @@ public class WeatherController {
 
   @FXML private TextField city;
 
-  @FXML private Text temp_info;
+  @FXML private Text tempInfo;
 
-  @FXML private Text temp_feels;
+  @FXML private Text tempFeels;
 
-  @FXML private Text temp_max;
+  @FXML private Text tempMax;
 
-  @FXML private Text temp_min;
+  @FXML private Text tempMin;
 
-  @FXML private Text temp_pressure;
+  @FXML private Text tempPressure;
 
-  @FXML private Text temp_city;
+  @FXML private Text tempCity;
 
-  @FXML private ImageView weather_condition;
-
-  @FXML private WebView map;
+  @FXML private ImageView weatherCondition;
 
   @FXML
   void initialize() {
@@ -106,34 +109,34 @@ public class WeatherController {
                   + city
                   + "&appid="
                   + API_KEY
-                  + "&units=metric");
+                  + "&units="
+                  + METRIC);
 
       if (!output.isEmpty()) {
 
         var json = new JSONObject(output);
 
-        float lat = json.getJSONObject("coord").getFloat("lat");
-        float lon = json.getJSONObject("coord").getFloat("lon");
+        var lat = json.getJSONObject("coord").getFloat("lat");
+        var lon = json.getJSONObject("coord").getFloat("lon");
 
         getSevenDaysContent(lat, lon);
 
-        temp_info.setText(json.getJSONObject("main").getInt("temp") + UNITS);
-        temp_feels.setText(
-            "Feels like: " + json.getJSONObject("main").getInt("feels_like") + UNITS);
-        temp_max.setText("Max: " + json.getJSONObject("main").getInt("temp_max") + UNITS);
-        temp_min.setText("Min: " + json.getJSONObject("main").getInt("temp_min") + UNITS);
-        temp_pressure.setText("Pressure: " + json.getJSONObject("main").getInt("pressure"));
-        temp_city.setText(city + ", " + json.getJSONObject("sys").getString("country"));
+        tempInfo.setText(json.getJSONObject("main").getInt("temp") + UNITS);
+        tempFeels.setText("Feels like: " + json.getJSONObject("main").getInt("feels_like") + UNITS);
+        tempMax.setText("Max: " + json.getJSONObject("main").getInt("temp_max") + UNITS);
+        tempMin.setText("Min: " + json.getJSONObject("main").getInt("temp_min") + UNITS);
+        tempPressure.setText("Pressure: " + json.getJSONObject("main").getInt("pressure"));
+        tempCity.setText(city + ", " + json.getJSONObject("sys").getString("country"));
 
-        // var result = json.getJSONArray("weather");
-        // var iconCode = result.getJSONObject(0).getString("icon");
-        // var image = new Image("https://openweathermap.org/img/w/" + iconCode + ".png");
         var image = new Image(getImageUrl(json));
-        weather_condition.setImage(image);
+        weatherCondition.setImage(image);
+
+        var webEngine = webView.getEngine();
+        var url = this.getClass().getResource("OpenWeatherMapLayer.html");
+        webEngine.load(url.toString());
+
       }
-      // WebEngine webEngine = new
-      // WebEngine(getClass().getResource("OpenWeatherMapLayer.html").toString());
-      // map.getEngine(webEngine);
+
       System.out.println(output);
     }
   }
@@ -148,19 +151,20 @@ public class WeatherController {
                 + lon
                 + "&exclude=current,minutely,hourly,alerts&appid="
                 + API_KEY
-                + "&units=metric");
+                + "&units="
+                + METRIC);
 
     var json = new JSONObject(output);
     var jsonArray = json.getJSONArray("daily");
 
-    for (int i = 0; i < jsonArray.length(); i++) {
+    for (var i = 0; i < jsonArray.length(); i++) {
       System.out.println(jsonArray.getJSONObject(i));
     }
 
     firstDayMinMax.setText(getMinMaxValues(jsonArray, 0));
     var image = new Image(getImageUrl(jsonArray.getJSONObject(0)));
     firstDayImg.setImage(image);
-    long timeStamp = jsonArray.getJSONObject(0).getLong("dt");
+    var timeStamp = jsonArray.getJSONObject(0).getLong("dt");
     firstDayOfWeek.setText(extractDayOfWeek(timeStamp));
 
     secondDayMinMax.setText(getMinMaxValues(jsonArray, 1));
@@ -212,8 +216,7 @@ public class WeatherController {
 
     var date = new java.util.Date(timeStamp * 1000);
 
-    var simpleDateformat =
-        new SimpleDateFormat("E", Locale.ENGLISH); // the day of the week abbreviated
+    var simpleDateformat = new SimpleDateFormat("E", Locale.ENGLISH);
 
     return simpleDateformat.format(date);
   }

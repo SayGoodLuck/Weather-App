@@ -9,5 +9,3 @@ J
 src/sample/Controller.java,a\9\a952ee24ccaf329067caf45d8e61416ce808b0ea
 J
 src/sample/WeatherApp.java,3\2\322fe934b7b15a7999652231fbedb2e24700ba43
-S
-#src/sample/OpenWeatherMapLayer.html,5\a\5ab2054e8434d0154f9fd4958d4cd89f45e28df5

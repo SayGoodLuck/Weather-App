@@ -13,103 +13,88 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.web.WebView?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="root" VBox.vgrow="ALWAYS"
-            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="sample.WeatherController">
-    <AnchorPane id="left_bar" prefHeight="727.0" prefWidth="400.0" styleClass="leftBar">
-        <Text id="temp_info" fx:id="temp_info" layoutX="22.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              text="15" wrappingWidth="229.00000205263495" AnchorPane.topAnchor="231.0"/>
-        <Text id="temp_feels" fx:id="temp_feels" layoutX="22.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              text="Feels like 20C" wrappingWidth="154.5937271118164"/>
-        <Text id="temp_max" fx:id="temp_max" layoutX="143.0" layoutY="461.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              text="Max" textAlignment="CENTER" wrappingWidth="118.59375"/>
-        <Text id="temp_min" fx:id="temp_min" layoutX="-7.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              text="Min" textAlignment="CENTER" wrappingWidth="112.59375"/>
-        <Text id="temp_pressure" fx:id="temp_pressure" layoutX="22.0" layoutY="371.0" strokeType="OUTSIDE"
-              strokeWidth="0.0" text="1200" wrappingWidth="154.59373474121094"/>
-        <Text id="city" fx:id="temp_city" layoutX="73.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0"
-              text="Kyiv" wrappingWidth="154.59371602535248" AnchorPane.rightAnchor="157.40628397464752"
-              AnchorPane.topAnchor="295.1015625"/>
-        <ImageView id="weather_condition" fx:id="weather_condition" fitHeight="46.0" fitWidth="46.0" layoutX="25.0"
-                   layoutY="289.0" pickOnBounds="true" preserveRatio="true"/>
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="root" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.WeatherController">
+    <AnchorPane id="left_bar" prefHeight="727.0" prefWidth="330.0" styleClass="leftBar">
+        <Text id="temp_info" fx:id="tempInfo" layoutX="22.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15" wrappingWidth="229.00000205263495" AnchorPane.topAnchor="231.0" />
+        <Text id="temp_feels" fx:id="tempFeels" layoutX="22.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Feels like 20C" wrappingWidth="154.5937271118164" />
+        <Text id="temp_max" fx:id="tempMax" layoutX="143.0" layoutY="461.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Max" textAlignment="CENTER" wrappingWidth="118.59375" />
+        <Text id="temp_min" fx:id="tempMin" layoutX="-7.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Min" textAlignment="CENTER" wrappingWidth="112.59375" />
+        <Text id="temp_pressure" fx:id="tempPressure" layoutX="22.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1200" wrappingWidth="154.59373474121094" />
+        <Text id="temp_city" fx:id="tempCity" layoutX="73.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kyiv" wrappingWidth="154.59371602535248" AnchorPane.rightAnchor="157.40628397464752" AnchorPane.topAnchor="295.1015625" />
+        <ImageView id="weather_condition" fx:id="weatherCondition" fitHeight="46.0" fitWidth="46.0" layoutX="25.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true" />
         <HBox layoutX="52.0" layoutY="37.0" maxHeight="35.0" prefHeight="16.0" prefWidth="281.0">
-            <TextField id="city" fx:id="city" focusTraversable="false"
-                       prefHeight="35.0" prefWidth="255.0" promptText="search for places ..."/>
+            <TextField id="city" fx:id="city" focusTraversable="false" prefHeight="35.0" prefWidth="255.0" promptText="search for places ..." />
             <Button id="getData" fx:id="getData" mnemonicParsing="false" styleClass="button">
                 <graphic>
                     <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                        <Image url="@assets/1024px-Search_Icon.svg.png"/>
+                        <Image url="@assets/1024px-Search_Icon.svg.png" />
                     </ImageView>
                 </graphic>
             </Button>
         </HBox>
     </AnchorPane>
-    <HBox layoutX="400.0" layoutY="90.0" prefHeight="100.0" prefWidth="851.0" spacing="30">
+    <HBox layoutX="400.0" layoutY="90.0" prefHeight="100.0" prefWidth="851.0" spacing="45">
         <padding>
-            <Insets left="30" right="30"/>
+            <Insets left="30" right="30" />
         </padding>
         <VBox id="weather_first_day" alignment="CENTER" prefHeight="100.0" prefWidth="77.0" styleClass="days">
-            <Text id="firstDayOfWeek" fx:id="firstDayOfWeek"/>
-            <ImageView id="firstDayImg" fx:id="firstDayImg" fitHeight="46.0" fitWidth="48.0"/>
-            <Text id="firstDayTempMinMax" fx:id="firstDayMinMax"/>
+            <Text id="firstDayOfWeek" fx:id="firstDayOfWeek" />
+            <ImageView id="firstDayImg" fx:id="firstDayImg" fitHeight="46.0" fitWidth="48.0" />
+            <Text id="firstDayTempMinMax" fx:id="firstDayMinMax" />
         </VBox>
         <VBox id="weather_second_day" alignment="CENTER" prefHeight="100.0" prefWidth="77.0" styleClass="days">
-            <Text id="secondDayOfWeek" fx:id="secondDayOfWeek"/>
-            <ImageView id="secondDayImg" fx:id="secondDayImg" fitHeight="46.0" fitWidth="48.0"/>
-            <Text id="secondDayTempMinMax" fx:id="secondDayMinMax"/>
+            <Text id="secondDayOfWeek" fx:id="secondDayOfWeek" />
+            <ImageView id="secondDayImg" fx:id="secondDayImg" fitHeight="46.0" fitWidth="48.0" />
+            <Text id="secondDayTempMinMax" fx:id="secondDayMinMax" />
         </VBox>
         <VBox id="weather_third_day" alignment="CENTER" prefHeight="100.0" prefWidth="77.0" styleClass="days">
-            <Text id="thirdDayOfWeek" fx:id="thirdDayOfWeek"/>
-            <ImageView id="thirdDayImg" fx:id="thirdDayImg" fitHeight="46.0" fitWidth="48.0"/>
-            <Text id="thirdDayTempMinMax" fx:id="thirdDayMinMax"/>
+            <Text id="thirdDayOfWeek" fx:id="thirdDayOfWeek" />
+            <ImageView id="thirdDayImg" fx:id="thirdDayImg" fitHeight="46.0" fitWidth="48.0" />
+            <Text id="thirdDayTempMinMax" fx:id="thirdDayMinMax" />
         </VBox>
         <VBox id="weather_fourth_day" alignment="CENTER" prefHeight="100.0" prefWidth="77.0" styleClass="days">
-            <Text id="fourthDayOfWeek" fx:id="fourthDayOfWeek"/>
-            <ImageView id="fourthDayImg" fx:id="fourthDayImg" fitHeight="46.0" fitWidth="48.0"/>
-            <Text id="fourthDayTempMinMax" fx:id="fourthDayMinMax"/>
+            <Text id="fourthDayOfWeek" fx:id="fourthDayOfWeek" />
+            <ImageView id="fourthDayImg" fx:id="fourthDayImg" fitHeight="46.0" fitWidth="48.0" />
+            <Text id="fourthDayTempMinMax" fx:id="fourthDayMinMax" />
         </VBox>
         <VBox id="weather_fifth_day" alignment="CENTER" prefHeight="100.0" prefWidth="77.0" styleClass="days">
-            <Text id="fifthDayOfWeek" fx:id="fifthDayOfWeek"/>
-            <ImageView id="fifthDayImg" fx:id="fifthDayImg" fitHeight="46.0" fitWidth="48.0"/>
-            <Text id="fifthDayTempMinMax" fx:id="fifthDayMinMax"/>
+            <Text id="fifthDayOfWeek" fx:id="fifthDayOfWeek" />
+            <ImageView id="fifthDayImg" fx:id="fifthDayImg" fitHeight="46.0" fitWidth="48.0" />
+            <Text id="fifthDayTempMinMax" fx:id="fifthDayMinMax" />
         </VBox>
         <VBox id="weather_six_day" alignment="CENTER" prefHeight="100.0" prefWidth="77.0" styleClass="days">
-            <Text id="sixDayOfWeek" fx:id="sixDayOfWeek"/>
-            <ImageView id="sixDayImg" fx:id="sixDayImg" fitHeight="46.0" fitWidth="48.0"/>
-            <Text id="sixDayTempMinMax" fx:id="sixDayMinMax"/>
+            <Text id="sixDayOfWeek" fx:id="sixDayOfWeek" />
+            <ImageView id="sixDayImg" fx:id="sixDayImg" fitHeight="46.0" fitWidth="48.0" />
+            <Text id="sixDayTempMinMax" fx:id="sixDayMinMax" />
         </VBox>
         <VBox id="weather_seven_day" alignment="CENTER" prefHeight="100.0" prefWidth="77.0" styleClass="days">
-            <Text id="sevenDayOfWeek" fx:id="sevenDayOfWeek"/>
-            <ImageView id="sevenDayImg" fx:id="sevenDayImg" fitHeight="46.0" fitWidth="48.0"/>
-            <Text id="sevenDayTempMinMax" fx:id="sevenDayMinMax"/>
+            <Text id="sevenDayOfWeek" fx:id="sevenDayOfWeek" />
+            <ImageView id="sevenDayImg" fx:id="sevenDayImg" fitHeight="46.0" fitWidth="48.0" />
+            <Text id="sevenDayTempMinMax" fx:id="sevenDayMinMax" />
         </VBox>
     </HBox>
-    <GridPane hgap="30" layoutX="400.0" layoutY="300" prefHeight="400" prefWidth="500" vgap="30">
+    <GridPane hgap="30" layoutX="400.0" layoutY="300" vgap="30" AnchorPane.bottomAnchor="0.0">
         <padding>
-            <Insets left="30" right="30"/>
+            <Insets bottom="40" left="30" right="30" />
         </padding>
-        <columnConstraints>
-            <ColumnConstraints/>
-            <ColumnConstraints/>
-            <ColumnConstraints/>
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints/>
-            <RowConstraints/>
-        </rowConstraints>
-        <StackPane id="uv_index" prefHeight="100" prefWidth="150" styleClass="features" GridPane.columnIndex="0"
-                   GridPane.rowIndex="0"/>
-        <StackPane id="wind_info" prefHeight="100" prefWidth="150" styleClass="features" GridPane.columnIndex="1"
-                   GridPane.rowIndex="0"/>
-        <StackPane id="sunrise_sunset" prefHeight="100" prefWidth="150" styleClass="features"
-                   GridPane.columnIndex="2" GridPane.rowIndex="0"/>
-        <StackPane id="humidity" prefHeight="100" prefWidth="150" styleClass="features" GridPane.columnIndex="0"
-                   GridPane.rowIndex="1"/>
-        <StackPane id="visibility" prefHeight="100" prefWidth="150" styleClass="features" GridPane.columnIndex="1"
-                   GridPane.rowIndex="1"/>
-        <StackPane id="min_max_temp" prefHeight="100" prefWidth="150" styleClass="features" GridPane.columnIndex="2"
-                   GridPane.rowIndex="1"/>
-    </GridPane>
 
+        <StackPane id="uv_index" prefHeight="100" prefWidth="130.0" styleClass="features" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <StackPane id="wind_info" prefHeight="100" prefWidth="130.0" styleClass="features" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <StackPane id="sunrise_sunset" prefHeight="100" prefWidth="130.0" styleClass="features" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+        <StackPane id="humidity" prefHeight="100" prefWidth="130.0" styleClass="features" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <StackPane id="visibility" prefHeight="100" prefWidth="130.0" styleClass="features" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <StackPane id="min_max_temp" prefHeight="100" prefWidth="130.0" styleClass="features" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <columnConstraints>
+         <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+   <WebView id="webView" fx:id="webView" layoutX="1000.0" layoutY="387.0" prefHeight="300.0" prefWidth="300.0" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="40.0" />
 </AnchorPane>
