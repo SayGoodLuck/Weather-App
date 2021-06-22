@@ -5,6 +5,7 @@
 
 .root {
     -fx-font-family: Montserrat;
+    -fx-background-color: silver;
 }
 
 .days {
@@ -24,18 +25,22 @@
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
 }
 
+#city {
+    -fx-font-size: 13;
+    -fx-background-color: #fafafa;
+    -fx-border-radius: 30px;
+    -fx-border-color: silver;
+}
+.button {
+    -fx-background-color: white;
+}
+.leftBar {
+    -fx-background-color: #FFFFFF;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
 #temp_info {
     -fx-font-size: 45;
     /*-fx-background-color: rgba(255, 255, 255, 100);*/
 }
 
-#city {
-    -fx-font-size: 25;
-}
 
-/*#weather_first_day {*/
-/*    !*-fx-background-color: rgba(255, 255, 255, 100);*!*/
-/*}*/
-/*#weather_second_day {*/
-/*    !*-fx-background-color: rgba(255, 255, 255, 100);*!*/
-/*}*/

@@ -5,21 +5,19 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
+import org.json.JSONArray;
 import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.SimpleDateFormat;
-import java.util.List;
 import java.util.Locale;
 
 public class WeatherController {
-
-  private List<StackPane> sevenDaysForecast;
 
   private static final String API_KEY = "900ea254740cee343805d46750147cdc";
   private static final String DEFAULT_CITY = "Kyiv";
@@ -90,13 +88,6 @@ public class WeatherController {
 
   @FXML
   void initialize() {
-
-    //    sevenDaysForecast = new ArrayList<>();
-    //
-    //    sevenDaysForecast.add(firstDay);
-    //    sevenDaysForecast.add(secondDay);
-    //    sevenDaysForecast.add(thirdDay);
-
     getContent(DEFAULT_CITY);
 
     getData.setOnAction(
@@ -137,7 +128,7 @@ public class WeatherController {
         // var result = json.getJSONArray("weather");
         // var iconCode = result.getJSONObject(0).getString("icon");
         // var image = new Image("https://openweathermap.org/img/w/" + iconCode + ".png");
-        var image = new Image(getImageUrl(json, "weather"));
+        var image = new Image(getImageUrl(json));
         weather_condition.setImage(image);
       }
       // WebEngine webEngine = new
@@ -166,125 +157,69 @@ public class WeatherController {
       System.out.println(jsonArray.getJSONObject(i));
     }
 
-    firstDayMinMax.setText(
-        jsonArray.getJSONObject(0).getJSONObject("temp").getInt("min")
-            + CELSIUS
-            + " "
-            + jsonArray.getJSONObject(0).getJSONObject("temp").getInt("max")
-            + CELSIUS);
-
-    var image = new Image(getImageUrl(jsonArray.getJSONObject(0), "weather"));
-
+    firstDayMinMax.setText(getMinMaxValues(jsonArray, 0));
+    var image = new Image(getImageUrl(jsonArray.getJSONObject(0)));
     firstDayImg.setImage(image);
-
     long timeStamp = jsonArray.getJSONObject(0).getLong("dt");
-
     firstDayOfWeek.setText(extractDayOfWeek(timeStamp));
 
-    secondDayMinMax.setText(
-            jsonArray.getJSONObject(1).getJSONObject("temp").getInt("min")
-                    + CELSIUS
-                    + " "
-                    + jsonArray.getJSONObject(1).getJSONObject("temp").getInt("max")
-                    + CELSIUS);
-
-     image = new Image(getImageUrl(jsonArray.getJSONObject(1), "weather"));
-
+    secondDayMinMax.setText(getMinMaxValues(jsonArray, 1));
+    image = new Image(getImageUrl(jsonArray.getJSONObject(1)));
     secondDayImg.setImage(image);
-
-     timeStamp = jsonArray.getJSONObject(1).getLong("dt");
-
+    timeStamp = jsonArray.getJSONObject(1).getLong("dt");
     secondDayOfWeek.setText(extractDayOfWeek(timeStamp));
 
-    thirdDayMinMax.setText(
-            jsonArray.getJSONObject(2).getJSONObject("temp").getInt("min")
-                    + CELSIUS
-                    + " "
-                    + jsonArray.getJSONObject(2).getJSONObject("temp").getInt("max")
-                    + CELSIUS);
-
-    image = new Image(getImageUrl(jsonArray.getJSONObject(2), "weather"));
-
+    thirdDayMinMax.setText(getMinMaxValues(jsonArray, 2));
+    image = new Image(getImageUrl(jsonArray.getJSONObject(2)));
     thirdDayImg.setImage(image);
-
     timeStamp = jsonArray.getJSONObject(2).getLong("dt");
-
     thirdDayOfWeek.setText(extractDayOfWeek(timeStamp));
 
-    fourthDayMinMax.setText(
-            jsonArray.getJSONObject(3).getJSONObject("temp").getInt("min")
-                    + CELSIUS
-                    + " "
-                    + jsonArray.getJSONObject(3).getJSONObject("temp").getInt("max")
-                    + CELSIUS);
-
-    image = new Image(getImageUrl(jsonArray.getJSONObject(3), "weather"));
-
+    fourthDayMinMax.setText(getMinMaxValues(jsonArray, 3));
+    image = new Image(getImageUrl(jsonArray.getJSONObject(3)));
     fourthDayImg.setImage(image);
-
     timeStamp = jsonArray.getJSONObject(3).getLong("dt");
-
     fourthDayOfWeek.setText(extractDayOfWeek(timeStamp));
 
-    fifthDayMinMax.setText(
-            jsonArray.getJSONObject(4).getJSONObject("temp").getInt("min")
-                    + CELSIUS
-                    + " "
-                    + jsonArray.getJSONObject(4).getJSONObject("temp").getInt("max")
-                    + CELSIUS);
-
-    image = new Image(getImageUrl(jsonArray.getJSONObject(4), "weather"));
-
+    fifthDayMinMax.setText(getMinMaxValues(jsonArray, 4));
+    image = new Image(getImageUrl(jsonArray.getJSONObject(4)));
     fifthDayImg.setImage(image);
-
     timeStamp = jsonArray.getJSONObject(4).getLong("dt");
-
     fifthDayOfWeek.setText(extractDayOfWeek(timeStamp));
 
-    sixDayMinMax.setText(
-            jsonArray.getJSONObject(5).getJSONObject("temp").getInt("min")
-                    + CELSIUS
-                    + " "
-                    + jsonArray.getJSONObject(5).getJSONObject("temp").getInt("max")
-                    + CELSIUS);
-
-    image = new Image(getImageUrl(jsonArray.getJSONObject(5), "weather"));
-
+    sixDayMinMax.setText(getMinMaxValues(jsonArray, 5));
+    image = new Image(getImageUrl(jsonArray.getJSONObject(5)));
     sixDayImg.setImage(image);
-
     timeStamp = jsonArray.getJSONObject(5).getLong("dt");
-
     sixDayOfWeek.setText(extractDayOfWeek(timeStamp));
 
-    sevenDayMinMax.setText(
-            jsonArray.getJSONObject(6).getJSONObject("temp").getInt("min")
-                    + CELSIUS
-                    + " "
-                    + jsonArray.getJSONObject(6).getJSONObject("temp").getInt("max")
-                    + CELSIUS);
-
-    image = new Image(getImageUrl(jsonArray.getJSONObject(6), "weather"));
-
+    sevenDayMinMax.setText(getMinMaxValues(jsonArray, 6));
+    image = new Image(getImageUrl(jsonArray.getJSONObject(6)));
     sevenDayImg.setImage(image);
-
     timeStamp = jsonArray.getJSONObject(6).getLong("dt");
-
     sevenDayOfWeek.setText(extractDayOfWeek(timeStamp));
+  }
 
+  private String getMinMaxValues(JSONArray jsonArray, int index) {
+    return jsonArray.getJSONObject(index).getJSONObject("temp").getInt("min")
+        + CELSIUS
+        + " "
+        + jsonArray.getJSONObject(index).getJSONObject("temp").getInt("max")
+        + CELSIUS;
   }
 
   private String extractDayOfWeek(long timeStamp) {
 
-    java.util.Date date = new java.util.Date(timeStamp * 1000);
+    var date = new java.util.Date(timeStamp * 1000);
 
-    SimpleDateFormat simpleDateformat =
+    var simpleDateformat =
         new SimpleDateFormat("E", Locale.ENGLISH); // the day of the week abbreviated
 
     return simpleDateformat.format(date);
   }
 
-  private static String getImageUrl(JSONObject json, String key) {
-    var result = json.getJSONArray(key);
+  private String getImageUrl(JSONObject json) {
+    var result = json.getJSONArray("weather");
     var iconCode = result.getJSONObject(0).getString("icon");
     return "https://openweathermap.org/img/w/" + iconCode + ".png";
   }
@@ -300,7 +235,7 @@ public class WeatherController {
       String line;
 
       while ((line = bufferedReader.readLine()) != null) {
-        content.append(line + "\n");
+        content.append(line).append("\n");
       }
 
       bufferedReader.close();
