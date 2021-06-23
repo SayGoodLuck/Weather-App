@@ -10,6 +10,6 @@ development in progress.
 
 Try this markdown:
 
-![alt text](https://imgur.com/GNcEERd)
+![alt text](https://i.imgur.com/GNcEERd.png)
 
 
