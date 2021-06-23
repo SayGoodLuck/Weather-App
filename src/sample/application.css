@@ -23,6 +23,8 @@
     -fx-background-color: #ffffff;
     -fx-background-radius: 10, 10, 10, 10;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
+    -fx-pref-height: 130;
+    -fx-pref-width: 160;
 }
 
 #city {
@@ -52,6 +54,15 @@
 
 #webView {
     -fx-border-radius: 30px;
+}
+
+#todayHighlights {
+    -fx-font-family: "Montserrat ExtraBold";
+    -fx-font-size: 20;
+}
+
+.tabsSize {
+
 }
 
 
