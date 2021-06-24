@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="features added">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="icons added">
+      <change afterPath="$PROJECT_DIR$/src/sample/models/City.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sample/models/WeatherManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/application.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/WeatherApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controllers/WeatherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/dailyForecast.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/weather-app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/weather-app.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,8 +66,8 @@
       <list>
         <option value="Enum" />
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -198,7 +204,7 @@
       <option name="VM_PARAMETERS" value="--module-path D:\CodeWorkspace\java\libs\openjfx-11.0.2_windows-x64_bin-sdk\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml --add-modules=javafx.swing,javafx.graphics,javafx.fxml,javafx.media,javafx.web --add-reads javafx.graphics=ALL-UNNAMED --add-opens javafx.controls/com.sun.javafx.charts=ALL-UNNAMED --add-opens javafx.graphics/com.sun.javafx.iio=ALL-UNNAMED --add-opens javafx.graphics/com.sun.javafx.iio.common=ALL-UNNAMED --add-opens javafx.graphics/com.sun.javafx.css=ALL-UNNAMED --add-opens javafx.base/com.sun.javafx.runtime=ALL-UNNAMED" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sample.*" />
+          <option name="PATTERN" value="sample.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -214,13 +220,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -279,6 +287,7 @@
       <workItem from="1624301365767" duration="2518000" />
       <workItem from="1624371730058" duration="409000" />
       <workItem from="1624372169695" duration="5767000" />
+      <workItem from="1624495104879" duration="1918000" />
     </task>
     <task id="LOCAL-00001" summary="error fix.&#10;added icons and more info">
       <created>1623428623704</created>
@@ -336,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624387435237</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="icons added">
+      <created>1624452333608</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1624452333608</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -385,6 +401,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
@@ -397,7 +414,8 @@
     <MESSAGE value="7 days forecast added" />
     <MESSAGE value="search tab has been modified" />
     <MESSAGE value="features added" />
-    <option name="LAST_COMMIT_MESSAGE" value="features added" />
+    <MESSAGE value="icons added" />
+    <option name="LAST_COMMIT_MESSAGE" value="icons added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

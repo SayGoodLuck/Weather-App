@@ -1,4 +1,4 @@
-package sample;
+package sample.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -100,8 +100,6 @@ public class WeatherController {
 
   @FXML private Text tempMin;
 
-  @FXML private Text tempPressure;
-
   @FXML private Text tempCity;
 
   @FXML private ImageView weatherCondition;
@@ -152,7 +150,6 @@ public class WeatherController {
         tempFeels.setText("Feels like: " + json.getJSONObject("main").getInt("feels_like") + UNITS);
         tempMax.setText("Max: " + json.getJSONObject("main").getInt("temp_max") + UNITS);
         tempMin.setText("Min: " + json.getJSONObject("main").getInt("temp_min") + UNITS);
-        // tempPressure.setText("Pressure: " + json.getJSONObject("main").getInt("pressure"));
         tempCity.setText(city + ", " + json.getJSONObject("sys").getString("country"));
 
         var image = new Image(getImageUrl(json));
@@ -167,7 +164,7 @@ public class WeatherController {
         sunset.setText(convertTime(json.getJSONObject("sys").getLong("sunset")));
 
         var visionRange = json.getFloat("visibility") / 1000;
-        visibility.setText(String.valueOf(visionRange) + " km");
+        visibility.setText(visionRange + " km");
 
         humidity.setText(json.getJSONObject("main").getInt("humidity") + "%");
         description.setText(json.getJSONArray("weather").getJSONObject(0).getString("description"));
