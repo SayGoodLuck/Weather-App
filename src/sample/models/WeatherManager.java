@@ -96,11 +96,12 @@ public class WeatherManager {
     }
   }
 
-  public Map getSevenDaysForecast() {
-    Map<Object, ArrayList<Object>> multiMap = new HashMap<>();
+//  public Map getSevenDaysForecast() {
+//    Map<Object, ArrayList<Object>> multiMap = new HashMap<>();
+//
+//
+//  }
 
-
-  }
   private String timeStampConvert(long timeStamp) {
     var date = new java.util.Date(timeStamp * 1000);
 
