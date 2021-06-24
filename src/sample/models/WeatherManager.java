@@ -10,8 +10,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.Locale;
+import java.util.*;
 
 public class WeatherManager {
 
@@ -21,9 +20,8 @@ public class WeatherManager {
   private static final String SPEED = "km/h";
   private static final String CURRENT = "current";
   private static final String DAILY = "daily";
-  private City city;
 
-  private String description;
+  private City city;
 
   private String humidity;
 
@@ -51,6 +49,8 @@ public class WeatherManager {
 
   private String uvIndex;
 
+  private DailyForecast dailyForecast;
+
   public void getCurrentWeather(String cityName) {
 
     setCityInfo(cityName);
@@ -72,11 +72,7 @@ public class WeatherManager {
         var json = new JSONObject(output);
         var jsonArray = json.getJSONArray(DAILY);
 
-        var formatter = new SimpleDateFormat("HH:mm");
-        var time = new Date(System.currentTimeMillis());
-
-        setCurrentDayOfWeek(LocalDate.now().getDayOfWeek().name() + ", ");
-        setCurrentTime(formatter.format(time));
+        setTimeInfo();
 
         setTempCurrent(String.valueOf(json.getJSONObject(CURRENT).getInt("temp")));
         setTempFeelsLike(json.getJSONObject(CURRENT).getFloat("feels_like") + UNITS);
@@ -87,8 +83,8 @@ public class WeatherManager {
         setIcon(new Image(getImageUrl(json)));
 
         setWindSpeed(json.getJSONObject(CURRENT).getFloat("wind_speed") + SPEED);
-        setSunrise(convertTime(json.getJSONObject(CURRENT).getLong("sunrise")));
-        setSunset(convertTime(json.getJSONObject(CURRENT).getLong("sunset")));
+        setSunrise(timeStampConvert(json.getJSONObject(CURRENT).getLong("sunrise")));
+        setSunset(timeStampConvert(json.getJSONObject(CURRENT).getLong("sunset")));
 
         var visionRange = json.getJSONObject(CURRENT).getFloat("visibility") / 1000;
         setVisibility(visionRange + " km");
@@ -100,7 +96,12 @@ public class WeatherManager {
     }
   }
 
-  private String convertTime(long timeStamp) {
+  public Map getSevenDaysForecast() {
+    Map<Object, ArrayList<Object>> multiMap = new HashMap<>();
+
+
+  }
+  private String timeStampConvert(long timeStamp) {
     var date = new java.util.Date(timeStamp * 1000);
 
     var simpleDateformat = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
@@ -156,6 +157,14 @@ public class WeatherManager {
     var result = json.getJSONObject(CURRENT).getJSONArray("weather");
     var iconCode = result.getJSONObject(0).getString("icon");
     return "https://openweathermap.org/img/w/" + iconCode + ".png";
+  }
+
+  public void setTimeInfo() {
+    var formatter = new SimpleDateFormat("HH:mm");
+    var time = new Date(System.currentTimeMillis());
+
+    setCurrentDayOfWeek(LocalDate.now().getDayOfWeek().name() + ", ");
+    setCurrentTime(formatter.format(time));
   }
 
   public City getCity() {
