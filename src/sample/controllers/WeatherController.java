@@ -5,19 +5,24 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import org.json.JSONArray;
+import sample.models.DailyForecast;
 import sample.models.WeatherManager;
 
+import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
+import java.util.Map;
 
 public class WeatherController {
 
-  private static final String DEFAULT_CITY = "Kyiv";
+  private static final String DEFAULT_CITY = "kyiv";
   private static final String CELSIUS = "\u00B0";
 
-  @FXML private Text description;
+  @FXML private Text uvIndex;
 
   @FXML private Text humidity;
 
@@ -112,8 +117,8 @@ public class WeatherController {
       return;
     }
 
-    var weatherManager = new WeatherManager();
-    weatherManager.getCurrentWeather(city);
+    WeatherManager weatherManager = new WeatherManager();
+    Map<Integer, DailyForecast> map = weatherManager.getSevenDaysForecast(city);
 
     currentDayOfWeek.setText(weatherManager.getCurrentDayOfWeek());
     currentTime.setText(weatherManager.getCurrentTime());
@@ -131,12 +136,12 @@ public class WeatherController {
     sunset.setText(weatherManager.getSunset());
     visibility.setText(weatherManager.getVisibility());
     humidity.setText(weatherManager.getHumidity());
-    description.setText(weatherManager.getUvIndex());
+    uvIndex.setText(weatherManager.getUvIndex());
 
-    //        var webEngine = webView.getEngine();
-    //        var url = this.getClass().getResource("OpenWeatherMapLayer.html");
-    //        webEngine.load(url.toString());
-
+    WebEngine webEngine = webView.getEngine();
+    URL url = this.getClass().getResource("OpenWeatherMapLayer.html");
+    assert url != null;
+    webEngine.load(url.toString());
   }
 
   public void getSevenDaysContent(float lat, float lon) {
@@ -212,9 +217,9 @@ public class WeatherController {
 
   private String extractDayOfWeek(long timeStamp) {
 
-    var date = new java.util.Date(timeStamp * 1000);
+    Date date = new java.util.Date(timeStamp * 1000);
 
-    var simpleDateformat = new SimpleDateFormat("E", Locale.ENGLISH);
+    SimpleDateFormat simpleDateformat = new SimpleDateFormat("E", Locale.ENGLISH);
 
     return simpleDateformat.format(date);
   }

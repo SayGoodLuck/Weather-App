@@ -1,13 +1,12 @@
 package sample.models;
 
-import javafx.scene.image.Image;
-
 public class DailyForecast {
+
+  private String timeStamp;
+
   private City city;
 
   private String humidity;
-
-  private String visibility;
 
   private String sunrise;
 
@@ -15,49 +14,97 @@ public class DailyForecast {
 
   private String windSpeed;
 
-  private String tempMax;
-
   private String tempMin;
 
-  private String tempCurrent;
+  private String tempMax;
+
+  private String dayTemp;
+
+  private String nightTemp;
 
   private String tempFeelsLike;
 
-  private Image icon;
-
-  private String currentDayOfWeek;
-
-  private String currentTime;
+  private String icon;
 
   private String uvIndex;
 
+  private String description;
+
   public DailyForecast(
+      String timeStamp,
       City city,
       String humidity,
-      String visibility,
       String sunrise,
       String sunset,
       String windSpeed,
-      String tempMax,
       String tempMin,
-      String tempCurrent,
+      String tempMax,
+      String dayTemp,
+      String nightTemp,
       String tempFeelsLike,
-      Image icon,
-      String currentDayOfWeek,
-      String uvIndex) {
+      String icon,
+      String uvIndex,
+      String description) {
+    this.timeStamp = timeStamp;
     this.city = city;
     this.humidity = humidity;
-    this.visibility = visibility;
     this.sunrise = sunrise;
     this.sunset = sunset;
     this.windSpeed = windSpeed;
-    this.tempMax = tempMax;
     this.tempMin = tempMin;
-    this.tempCurrent = tempCurrent;
+    this.tempMax = tempMax;
+    this.dayTemp = dayTemp;
+    this.nightTemp = nightTemp;
     this.tempFeelsLike = tempFeelsLike;
     this.icon = icon;
-    this.currentDayOfWeek = currentDayOfWeek;
     this.uvIndex = uvIndex;
+    this.description = description;
   }
 
+  @Override
+  public String toString() {
+    return "DailyForecast{"
+        + "timeStamp='"
+        + timeStamp
+        + '\''
+        + ", city="
+        + city
+        + ", humidity='"
+        + humidity
+        + '\''
+        + ", sunrise='"
+        + sunrise
+        + '\''
+        + ", sunset='"
+        + sunset
+        + '\''
+        + ", windSpeed='"
+        + windSpeed
+        + '\''
+        + ", tempMin='"
+        + tempMin
+        + '\''
+        + ", tempMax='"
+        + tempMax
+        + '\''
+        + ", dayTemp='"
+        + dayTemp
+        + '\''
+        + ", nightTemp='"
+        + nightTemp
+        + '\''
+        + ", tempFeelsLike='"
+        + tempFeelsLike
+        + '\''
+        + ", icon='"
+        + icon
+        + '\''
+        + ", uvIndex='"
+        + uvIndex
+        + '\''
+        + ", description='"
+        + description
+        + '\''
+        + '}';
+  }
 }
