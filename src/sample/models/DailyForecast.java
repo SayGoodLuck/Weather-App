@@ -1,8 +1,10 @@
 package sample.models;
 
+import javafx.scene.image.Image;
+
 public class DailyForecast {
 
-  private String timeStamp;
+  private String dayOfWeek;
 
   private City city;
 
@@ -24,14 +26,14 @@ public class DailyForecast {
 
   private String tempFeelsLike;
 
-  private String icon;
+  private Image icon;
 
   private String uvIndex;
 
   private String description;
 
   public DailyForecast(
-      String timeStamp,
+      String dayOfWeek,
       City city,
       String humidity,
       String sunrise,
@@ -42,10 +44,10 @@ public class DailyForecast {
       String dayTemp,
       String nightTemp,
       String tempFeelsLike,
-      String icon,
+      Image icon,
       String uvIndex,
       String description) {
-    this.timeStamp = timeStamp;
+    this.dayOfWeek = dayOfWeek;
     this.city = city;
     this.humidity = humidity;
     this.sunrise = sunrise;
@@ -61,11 +63,67 @@ public class DailyForecast {
     this.description = description;
   }
 
+  public String getDayOfWeek() {
+    return dayOfWeek;
+  }
+
+  public City getCity() {
+    return city;
+  }
+
+  public String getHumidity() {
+    return humidity;
+  }
+
+  public String getSunrise() {
+    return sunrise;
+  }
+
+  public String getSunset() {
+    return sunset;
+  }
+
+  public String getWindSpeed() {
+    return windSpeed;
+  }
+
+  public String getTempMin() {
+    return tempMin;
+  }
+
+  public String getTempMax() {
+    return tempMax;
+  }
+
+  public String getDayTemp() {
+    return dayTemp;
+  }
+
+  public String getNightTemp() {
+    return nightTemp;
+  }
+
+  public String getTempFeelsLike() {
+    return tempFeelsLike;
+  }
+
+  public Image getIcon() {
+    return icon;
+  }
+
+  public String getUvIndex() {
+    return uvIndex;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
   @Override
   public String toString() {
     return "DailyForecast{"
         + "timeStamp='"
-        + timeStamp
+        + dayOfWeek
         + '\''
         + ", city="
         + city

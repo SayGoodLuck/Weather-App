@@ -120,28 +120,33 @@ public class WeatherController {
     WeatherManager weatherManager = new WeatherManager();
     Map<Integer, DailyForecast> map = weatherManager.getSevenDaysForecast(city);
 
-    currentDayOfWeek.setText(weatherManager.getCurrentDayOfWeek());
-    currentTime.setText(weatherManager.getCurrentTime());
+    DailyForecast dailyForecast = map.get(0);
 
-    tempInfo.setText(String.valueOf(weatherManager.getTempCurrent()));
-    tempFeels.setText("Feels like: " + weatherManager.getTempFeelsLike());
-    tempMax.setText("Max: " + weatherManager.getTempMax());
-    tempMin.setText("Min: " + weatherManager.getTempMin());
-    tempCity.setText(city + ", " + weatherManager.getCity().getCountryCode());
+    currentTime.setText(weatherManager.getCurrentDateTime());
 
-    weatherCondition.setImage(weatherManager.getIcon());
+    //todo
+    //currentDayOfWeek.setText(dailyForecast.getDayOfWeek());
 
-    windSpeed.setText(weatherManager.getWindSpeed());
-    sunrise.setText(weatherManager.getSunrise());
-    sunset.setText(weatherManager.getSunset());
-    visibility.setText(weatherManager.getVisibility());
-    humidity.setText(weatherManager.getHumidity());
-    uvIndex.setText(weatherManager.getUvIndex());
 
-    WebEngine webEngine = webView.getEngine();
-    URL url = this.getClass().getResource("OpenWeatherMapLayer.html");
-    assert url != null;
-    webEngine.load(url.toString());
+    tempInfo.setText(dailyForecast.getDayTemp());
+    tempFeels.setText("Feels like: " + dailyForecast.getTempFeelsLike());
+    tempMax.setText("Max: " + dailyForecast.getTempMax());
+    tempMin.setText("Min: " + dailyForecast.getTempMin());
+    tempCity.setText(city + ", " + dailyForecast.getCity().getCountryCode());
+
+    weatherCondition.setImage(dailyForecast.getIcon());
+
+    windSpeed.setText(dailyForecast.getWindSpeed());
+    sunrise.setText(dailyForecast.getSunrise());
+    sunset.setText(dailyForecast.getSunset());
+//    visibility.setText(weatherManager.getVisibility());
+    humidity.setText(dailyForecast.getHumidity());
+    uvIndex.setText(dailyForecast.getUvIndex());
+
+//    WebEngine webEngine = webView.getEngine();
+//    URL url = this.getClass().getResource("OpenWeatherMapLayer.html");
+//    assert url != null;
+//    webEngine.load(url.toString());
   }
 
   public void getSevenDaysContent(float lat, float lon) {
