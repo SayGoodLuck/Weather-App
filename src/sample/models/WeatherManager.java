@@ -81,8 +81,8 @@ public class WeatherManager {
         setTempCurrent(String.valueOf(json.getJSONObject(CURRENT).getInt("temp")));
         setTempFeelsLike(json.getJSONObject(CURRENT).getFloat("feels_like") + UNITS);
 
-        setTempMax(jsonArray.getJSONObject(0).getJSONObject(DAILY).getFloat("temp_max") + UNITS);
-        setTempMin(jsonArray.getJSONObject(0).getJSONObject(DAILY).getFloat("temp_max") + UNITS);
+        setTempMax(jsonArray.getJSONObject(0).getJSONObject("temp").getFloat("max") + UNITS);
+        setTempMin(jsonArray.getJSONObject(0).getJSONObject("temp").getFloat("min") + UNITS);
 
         setIcon(new Image(getImageUrl(json)));
 
@@ -153,7 +153,7 @@ public class WeatherManager {
   }
 
   private String getImageUrl(JSONObject json) {
-    var result = json.getJSONArray("weather");
+    var result = json.getJSONObject(CURRENT).getJSONArray("weather");
     var iconCode = result.getJSONObject(0).getString("icon");
     return "https://openweathermap.org/img/w/" + iconCode + ".png";
   }

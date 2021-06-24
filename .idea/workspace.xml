@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="added City.java and WeatherManager.java">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/controllers/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controllers/WeatherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/models/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/models/City.java" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="current forecast &amp; features refactored">
       <change beforePath="$PROJECT_DIR$/src/sample/models/WeatherManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/models/WeatherManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -287,7 +284,7 @@
       <workItem from="1624301365767" duration="2518000" />
       <workItem from="1624371730058" duration="409000" />
       <workItem from="1624372169695" duration="5767000" />
-      <workItem from="1624495104879" duration="8807000" />
+      <workItem from="1624495104879" duration="9130000" />
     </task>
     <task id="LOCAL-00001" summary="error fix.&#10;added icons and more info">
       <created>1623428623704</created>
@@ -359,7 +356,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624497385956</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="current forecast &amp; features refactored">
+      <created>1624534736763</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1624534736763</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -423,7 +427,8 @@
     <MESSAGE value="features added" />
     <MESSAGE value="icons added" />
     <MESSAGE value="added City.java and WeatherManager.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="added City.java and WeatherManager.java" />
+    <MESSAGE value="current forecast &amp; features refactored" />
+    <option name="LAST_COMMIT_MESSAGE" value="current forecast &amp; features refactored" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
