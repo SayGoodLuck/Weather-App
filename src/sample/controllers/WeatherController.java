@@ -9,6 +9,7 @@ import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import sample.models.WeatherManager;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -104,137 +105,126 @@ public class WeatherController {
 
   @FXML private ImageView weatherCondition;
 
+
+  WeatherManager weatherManager;
+
   @FXML
   void initialize() {
+
     getContent(DEFAULT_CITY);
 
     getData.setOnAction(
         event -> {
           String userCity = city.getText().trim();
           getContent(userCity);
+          //weatherManager.getCurrentWeather(userCity);
         });
   }
 
-  public void getDayTime() {
-    var formatter = new SimpleDateFormat("HH:mm");
-    var time = new Date(System.currentTimeMillis());
-
-    currentDayOfWeek.setText(LocalDate.now().getDayOfWeek().name() + ", ");
-    currentTime.setText(formatter.format(time));
-  }
+//  public void getDayTime() {
+//    var formatter = new SimpleDateFormat("HH:mm");
+//    var time = new Date(System.currentTimeMillis());
+//
+//    currentDayOfWeek.setText(LocalDate.now().getDayOfWeek().name() + ", ");
+//    currentTime.setText(formatter.format(time));
+//  }
 
   public void getContent(String city) {
+    weatherManager = new WeatherManager();
+    weatherManager.getCurrentWeather(city);
 
-    getDayTime();
+    //getDayTime();
 
-    if (!city.equals("")) {
-      String output =
-          getUrlContent(
-              "https://api.openweathermap.org/data/2.5/weather?q="
-                  + city
-                  + "&appid="
-                  + API_KEY
-                  + "&units="
-                  + METRIC);
+    currentDayOfWeek.setText(weatherManager.getCurrentDayOfWeek());
+    currentTime.setText(weatherManager.getCurrentTime());
 
-      if (!output.isEmpty()) {
+    tempInfo.setText(String.valueOf(weatherManager.getTempCurrent()));
+    tempFeels.setText("Feels like" + weatherManager.getTempFeelsLike());
+    tempMax.setText("Max: " + weatherManager.getTempMax());
+    tempMin.setText("Min: " + weatherManager.getTempMin());
+    tempCity.setText(city + ", " + weatherManager.getCity().getCountryCode());
 
-        var json = new JSONObject(output);
+    weatherCondition.setImage(weatherManager.getIcon());
 
-        var lat = json.getJSONObject("coord").getFloat("lat");
-        var lon = json.getJSONObject("coord").getFloat("lon");
+    windSpeed.setText(weatherManager.getWindSpeed());
+    sunrise.setText(weatherManager.getSunrise());
+    sunset.setText(weatherManager.getSunset());
+    visibility.setText(weatherManager.getVisibility());
+    humidity.setText(weatherManager.getHumidity());
+    description.setText(weatherManager.getUvIndex());
 
-        getSevenDaysContent(lat, lon);
+//        var webEngine = webView.getEngine();
+//        var url = this.getClass().getResource("OpenWeatherMapLayer.html");
+//        webEngine.load(url.toString());
 
-        tempInfo.setText(json.getJSONObject("main").getInt("temp") + UNITS);
-        tempFeels.setText("Feels like: " + json.getJSONObject("main").getInt("feels_like") + UNITS);
-        tempMax.setText("Max: " + json.getJSONObject("main").getInt("temp_max") + UNITS);
-        tempMin.setText("Min: " + json.getJSONObject("main").getInt("temp_min") + UNITS);
-        tempCity.setText(city + ", " + json.getJSONObject("sys").getString("country"));
 
-        var image = new Image(getImageUrl(json));
-        weatherCondition.setImage(image);
-
-        var webEngine = webView.getEngine();
-        var url = this.getClass().getResource("OpenWeatherMapLayer.html");
-        webEngine.load(url.toString());
-
-        windSpeed.setText(json.getJSONObject("wind").getFloat("speed") + SPEED);
-        sunrise.setText(convertTime(json.getJSONObject("sys").getLong("sunrise")));
-        sunset.setText(convertTime(json.getJSONObject("sys").getLong("sunset")));
-
-        var visionRange = json.getFloat("visibility") / 1000;
-        visibility.setText(visionRange + " km");
-
-        humidity.setText(json.getJSONObject("main").getInt("humidity") + "%");
-        description.setText(json.getJSONArray("weather").getJSONObject(0).getString("description"));
       }
 
-      System.out.println(output);
-    }
-  }
+      //System.out.println(output);
+    //}
+  //}
 
   public void getSevenDaysContent(float lat, float lon) {
 
-    String output =
-        getUrlContent(
-            "https://api.openweathermap.org/data/2.5/onecall?lat="
-                + lat
-                + "&lon="
-                + lon
-                + "&exclude=current,minutely,hourly,alerts&appid="
-                + API_KEY
-                + "&units="
-                + METRIC);
+//    String output =
+//        getUrlContent(
+//            "https://api.openweathermap.org/data/2.5/onecall?lat="
+//                + lat
+//                + "&lon="
+//                + lon
+//                + "&exclude=current,minutely,hourly,alerts&appid="
+//                + API_KEY
+//                + "&units="
+//                + METRIC);
 
-    var json = new JSONObject(output);
-    var jsonArray = json.getJSONArray("daily");
-
-    for (var i = 0; i < jsonArray.length(); i++) {
-      System.out.println(jsonArray.getJSONObject(i));
-    }
-
-    firstDayMinMax.setText(getMinMaxValues(jsonArray, 0));
-    var image = new Image(getImageUrl(jsonArray.getJSONObject(0)));
-    firstDayImg.setImage(image);
-    var timeStamp = jsonArray.getJSONObject(0).getLong("dt");
-    firstDayOfWeek.setText(extractDayOfWeek(timeStamp));
-
-    secondDayMinMax.setText(getMinMaxValues(jsonArray, 1));
-    image = new Image(getImageUrl(jsonArray.getJSONObject(1)));
-    secondDayImg.setImage(image);
-    timeStamp = jsonArray.getJSONObject(1).getLong("dt");
-    secondDayOfWeek.setText(extractDayOfWeek(timeStamp));
-
-    thirdDayMinMax.setText(getMinMaxValues(jsonArray, 2));
-    image = new Image(getImageUrl(jsonArray.getJSONObject(2)));
-    thirdDayImg.setImage(image);
-    timeStamp = jsonArray.getJSONObject(2).getLong("dt");
-    thirdDayOfWeek.setText(extractDayOfWeek(timeStamp));
-
-    fourthDayMinMax.setText(getMinMaxValues(jsonArray, 3));
-    image = new Image(getImageUrl(jsonArray.getJSONObject(3)));
-    fourthDayImg.setImage(image);
-    timeStamp = jsonArray.getJSONObject(3).getLong("dt");
-    fourthDayOfWeek.setText(extractDayOfWeek(timeStamp));
-
-    fifthDayMinMax.setText(getMinMaxValues(jsonArray, 4));
-    image = new Image(getImageUrl(jsonArray.getJSONObject(4)));
-    fifthDayImg.setImage(image);
-    timeStamp = jsonArray.getJSONObject(4).getLong("dt");
-    fifthDayOfWeek.setText(extractDayOfWeek(timeStamp));
-
-    sixDayMinMax.setText(getMinMaxValues(jsonArray, 5));
-    image = new Image(getImageUrl(jsonArray.getJSONObject(5)));
-    sixDayImg.setImage(image);
-    timeStamp = jsonArray.getJSONObject(5).getLong("dt");
-    sixDayOfWeek.setText(extractDayOfWeek(timeStamp));
-
-    sevenDayMinMax.setText(getMinMaxValues(jsonArray, 6));
-    image = new Image(getImageUrl(jsonArray.getJSONObject(6)));
-    sevenDayImg.setImage(image);
-    timeStamp = jsonArray.getJSONObject(6).getLong("dt");
-    sevenDayOfWeek.setText(extractDayOfWeek(timeStamp));
+//    var json = new JSONObject(output);
+//    var jsonArray = json.getJSONArray("daily");
+//
+//    for (var i = 0; i < jsonArray.length(); i++) {
+//      System.out.println(jsonArray.getJSONObject(i));
+//    }
+//
+//    firstDayMinMax.setText(getMinMaxValues(jsonArray, 0));
+//    var image = new Image(getImageUrl(jsonArray.getJSONObject(0)));
+//    firstDayImg.setImage(image);
+//    var timeStamp = jsonArray.getJSONObject(0).getLong("dt");
+//    firstDayOfWeek.setText(extractDayOfWeek(timeStamp));
+//
+//    secondDayMinMax.setText(getMinMaxValues(jsonArray, 1));
+//    image = new Image(getImageUrl(jsonArray.getJSONObject(1)));
+//    secondDayImg.setImage(image);
+//    timeStamp = jsonArray.getJSONObject(1).getLong("dt");
+//    secondDayOfWeek.setText(extractDayOfWeek(timeStamp));
+//
+//    thirdDayMinMax.setText(getMinMaxValues(jsonArray, 2));
+//    image = new Image(getImageUrl(jsonArray.getJSONObject(2)));
+//    thirdDayImg.setImage(image);
+//    timeStamp = jsonArray.getJSONObject(2).getLong("dt");
+//    thirdDayOfWeek.setText(extractDayOfWeek(timeStamp));
+//
+//    fourthDayMinMax.setText(getMinMaxValues(jsonArray, 3));
+//    image = new Image(getImageUrl(jsonArray.getJSONObject(3)));
+//    fourthDayImg.setImage(image);
+//    timeStamp = jsonArray.getJSONObject(3).getLong("dt");
+//    fourthDayOfWeek.setText(extractDayOfWeek(timeStamp));
+//
+//    fifthDayMinMax.setText(getMinMaxValues(jsonArray, 4));
+//    image = new Image(getImageUrl(jsonArray.getJSONObject(4)));
+//    fifthDayImg.setImage(image);
+//    timeStamp = jsonArray.getJSONObject(4).getLong("dt");
+//    fifthDayOfWeek.setText(extractDayOfWeek(timeStamp));
+//
+//    sixDayMinMax.setText(getMinMaxValues(jsonArray, 5));
+//    image = new Image(getImageUrl(jsonArray.getJSONObject(5)));
+//    sixDayImg.setImage(image);
+//    timeStamp = jsonArray.getJSONObject(5).getLong("dt");
+//    sixDayOfWeek.setText(extractDayOfWeek(timeStamp));
+//
+//    sevenDayMinMax.setText(getMinMaxValues(jsonArray, 6));
+//    image = new Image(getImageUrl(jsonArray.getJSONObject(6)));
+//    sevenDayImg.setImage(image);
+//    timeStamp = jsonArray.getJSONObject(6).getLong("dt");
+//    sevenDayOfWeek.setText(extractDayOfWeek(timeStamp));
   }
 
   private String getMinMaxValues(JSONArray jsonArray, int index) {
@@ -252,41 +242,5 @@ public class WeatherController {
     var simpleDateformat = new SimpleDateFormat("E", Locale.ENGLISH);
 
     return simpleDateformat.format(date);
-  }
-
-  private String convertTime(long timeStamp) {
-    var date = new java.util.Date(timeStamp * 1000);
-
-    var simpleDateformat = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
-
-    return simpleDateformat.format(date);
-  }
-
-  private String getImageUrl(JSONObject json) {
-    var result = json.getJSONArray("weather");
-    var iconCode = result.getJSONObject(0).getString("icon");
-    return "https://openweathermap.org/img/w/" + iconCode + ".png";
-  }
-
-  private static String getUrlContent(String urlAddress) {
-    var content = new StringBuilder();
-
-    try {
-      var url = new URL(urlAddress);
-      URLConnection urlConn = url.openConnection();
-
-      var bufferedReader = new BufferedReader(new InputStreamReader(urlConn.getInputStream()));
-      String line;
-
-      while ((line = bufferedReader.readLine()) != null) {
-        content.append(line).append("\n");
-      }
-
-      bufferedReader.close();
-    } catch (Exception ex) {
-      System.out.println("City not found");
-      ex.printStackTrace();
-    }
-    return content.toString();
   }
 }
