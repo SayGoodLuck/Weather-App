@@ -1,5 +1,8 @@
 package sample.models;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class City {
 
   private String name;
@@ -47,5 +50,20 @@ public class City {
 
   public void setCountryCode(String countryCode) {
     this.countryCode = countryCode;
+  }
+
+  public String cityFormat() {
+    name.toLowerCase();
+
+    //Matcher matcher = Pattern.compile("(?:^| )[^a-z]*[a-z]").matcher(name);
+    Pattern p = Pattern.compile("\\b([A-Z]\\w*)\\b");
+    Matcher matcher = p.matcher(name);
+
+    StringBuffer result = new StringBuffer();
+    while (matcher.find()) {
+      matcher.appendReplacement(result, matcher.group().toUpperCase());
+    }
+
+    return matcher.appendTail(result).toString();
   }
 }

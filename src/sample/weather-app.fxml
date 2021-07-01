@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
- <!--Left bar-->
+<!--Left bar-->
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -35,8 +35,8 @@
                   wrappingWidth="196.59371602535248"/>
         </HBox>
         <HBox alignment="CENTER_LEFT" layoutX="22.0" layoutY="370.0" prefHeight="58.0" prefWidth="217.0">
-            <Text id="currentDayOfWeek" fx:id="currentDayOfWeek" strokeType="OUTSIDE" strokeWidth="0.0"/>
-            <Text id="currentTime" fx:id="currentTime" strokeType="OUTSIDE" strokeWidth="0.0"/>
+            <Text id="currentDayOfWeek" fx:id="currentDayTime" strokeType="OUTSIDE" strokeWidth="0.0"/>
+
         </HBox>
     </AnchorPane>
 
@@ -51,37 +51,64 @@
         <VBox id="weather_first_day" alignment="CENTER" prefHeight="130.0" prefWidth="100.0" styleClass="days">
             <Text id="firstDayOfWeek" fx:id="firstDayOfWeek"/>
             <ImageView id="firstDayImg" fx:id="firstDayImg" fitHeight="46.0" fitWidth="48.0"/>
-            <Text id="firstDayTempMinMax" fx:id="firstDayMinMax"/>
+            <HBox alignment="CENTER" spacing="5">
+                <Text id="firstDayTempMinMax" fx:id="firstDayMin"/>
+                <Text id="firstDayTempMinMax" fx:id="firstDayMax"/>
+            </HBox>
         </VBox>
         <VBox id="weather_second_day" alignment="CENTER" prefHeight="130.0" prefWidth="100.0" styleClass="days">
             <Text id="secondDayOfWeek" fx:id="secondDayOfWeek"/>
             <ImageView id="secondDayImg" fx:id="secondDayImg" fitHeight="46.0" fitWidth="48.0"/>
-            <Text id="secondDayTempMinMax" fx:id="secondDayMinMax"/>
+            <HBox alignment="CENTER" spacing="5">
+                <Text id="secondDayTempMinMax" fx:id="secondDayMin"/>
+                <Text id="secondDayTempMinMax" fx:id="secondDayMax"/>
+            </HBox>
+
         </VBox>
         <VBox id="weather_third_day" alignment="CENTER" prefHeight="130.0" prefWidth="100.0" styleClass="days">
             <Text id="thirdDayOfWeek" fx:id="thirdDayOfWeek"/>
             <ImageView id="thirdDayImg" fx:id="thirdDayImg" fitHeight="46.0" fitWidth="48.0"/>
-            <Text id="thirdDayTempMinMax" fx:id="thirdDayMinMax"/>
+            <HBox alignment="CENTER" spacing="5">
+                <Text id="thirdDayTempMinMax" fx:id="thirdDayMin"/>
+                <Text id="thirdDayTempMinMax" fx:id="thirdDayMax"/>
+            </HBox>
+
         </VBox>
         <VBox id="weather_fourth_day" alignment="CENTER" prefHeight="130.0" prefWidth="100.0" styleClass="days">
             <Text id="fourthDayOfWeek" fx:id="fourthDayOfWeek"/>
             <ImageView id="fourthDayImg" fx:id="fourthDayImg" fitHeight="46.0" fitWidth="48.0"/>
-            <Text id="fourthDayTempMinMax" fx:id="fourthDayMinMax"/>
+            <HBox alignment="CENTER" spacing="5">
+                <Text id="fourthDayTempMinMax" fx:id="fourthDayMin"/>
+                <Text id="fourthDayTempMinMax" fx:id="fourthDayMax"/>
+            </HBox>
+
         </VBox>
         <VBox id="weather_fifth_day" alignment="CENTER" prefHeight="130.0" prefWidth="100.0" styleClass="days">
             <Text id="fifthDayOfWeek" fx:id="fifthDayOfWeek"/>
             <ImageView id="fifthDayImg" fx:id="fifthDayImg" fitHeight="46.0" fitWidth="48.0"/>
-            <Text id="fifthDayTempMinMax" fx:id="fifthDayMinMax"/>
+            <HBox alignment="CENTER" spacing="5">
+                <Text id="fifthDayTempMinMax" fx:id="fifthDayMin"/>
+                <Text id="fifthDayTempMinMax" fx:id="fifthDayMax"/>
+            </HBox>
+
         </VBox>
         <VBox id="weather_six_day" alignment="CENTER" prefHeight="130.0" prefWidth="100.0" styleClass="days">
             <Text id="sixDayOfWeek" fx:id="sixDayOfWeek"/>
             <ImageView id="sixDayImg" fx:id="sixDayImg" fitHeight="46.0" fitWidth="48.0"/>
-            <Text id="sixDayTempMinMax" fx:id="sixDayMinMax"/>
+            <HBox alignment="CENTER" spacing="5">
+                <Text id="sixDayTempMinMax" fx:id="sixDayMin"/>
+                <Text id="sixDayTempMinMax" fx:id="sixDayMax"/>
+            </HBox>
+
         </VBox>
         <VBox id="weather_seven_day" alignment="CENTER" prefHeight="130.0" prefWidth="100.0" styleClass="days">
             <Text id="sevenDayOfWeek" fx:id="sevenDayOfWeek"/>
             <ImageView id="sevenDayImg" fx:id="sevenDayImg" fitHeight="46.0" fitWidth="48.0"/>
-            <Text id="sevenDayTempMinMax" fx:id="sevenDayMinMax"/>
+            <HBox alignment="CENTER" spacing="5">
+                <Text id="sevenDayTempMinMax" fx:id="sevenDayMin"/>
+                <Text id="sevenDayTempMinMax" fx:id="sevenDayMax"/>
+            </HBox>
+
         </VBox>
     </HBox>
 
@@ -119,10 +146,11 @@
         </VBox>
         <VBox id="min_max_temp" alignment="CENTER" styleClass="features" GridPane.columnIndex="2" GridPane.rowIndex="1">
             <Text text="Min &amp; Max temperature"/>
-            <Text id="temp_max" fx:id="tempMax" layoutX="143.0" layoutY="461.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                  text="Max" textAlignment="CENTER" wrappingWidth="118.59375"/>
             <Text id="temp_min" fx:id="tempMin" layoutX="-7.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0"
                   text="Min" textAlignment="CENTER" wrappingWidth="112.59375"/>
+            <Text id="temp_max" fx:id="tempMax" layoutX="143.0" layoutY="461.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                  text="Max" textAlignment="CENTER" wrappingWidth="118.59375"/>
+
         </VBox>
     </GridPane>
 

@@ -5,16 +5,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
-import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-import org.json.JSONArray;
 import sample.models.DailyForecast;
-import sample.models.WeatherManager;
+import sample.service.WeatherManager;
 
-import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 import java.util.Map;
 
 public class WeatherController {
@@ -26,11 +20,7 @@ public class WeatherController {
 
   @FXML private Text humidity;
 
-  @FXML private Text currentTime;
-
-  @FXML private Text currentDayOfWeek;
-
-  @FXML private Text visibility;
+  @FXML private Text currentDayTime;
 
   @FXML private Text sunset;
 
@@ -40,43 +30,57 @@ public class WeatherController {
 
   @FXML private WebView webView;
 
-  @FXML private Text firstDayMinMax;
+  @FXML private Text firstDayMax;
+
+  @FXML private Text firstDayMin;
 
   @FXML private ImageView firstDayImg;
 
   @FXML private Text firstDayOfWeek;
 
-  @FXML private Text secondDayMinMax;
+  @FXML private Text secondDayMin;
+
+  @FXML private Text secondDayMax;
 
   @FXML private ImageView secondDayImg;
 
   @FXML private Text secondDayOfWeek;
 
-  @FXML private Text thirdDayMinMax;
+  @FXML private Text thirdDayMin;
+
+  @FXML private Text thirdDayMax;
 
   @FXML private ImageView thirdDayImg;
 
   @FXML private Text thirdDayOfWeek;
 
-  @FXML private Text fourthDayMinMax;
+  @FXML private Text fourthDayMin;
+
+  @FXML private Text fourthDayMax;
 
   @FXML private ImageView fourthDayImg;
 
   @FXML private Text fourthDayOfWeek;
 
-  @FXML private Text fifthDayMinMax;
+  @FXML private Text fifthDayMax;
+
+  @FXML private Text fifthDayMin;
 
   @FXML private ImageView fifthDayImg;
 
   @FXML private Text fifthDayOfWeek;
 
-  @FXML private Text sixDayMinMax;
+  @FXML private Text sixDayMin;
+
+  @FXML private Text sixDayMax;
 
   @FXML private ImageView sixDayImg;
 
   @FXML private Text sixDayOfWeek;
 
-  @FXML private Text sevenDayMinMax;
+  @FXML private Text sevenDayMin;
+
+  @FXML private Text sevenDayMax;
 
   @FXML private ImageView sevenDayImg;
 
@@ -120,112 +124,76 @@ public class WeatherController {
     WeatherManager weatherManager = new WeatherManager();
     Map<Integer, DailyForecast> map = weatherManager.getSevenDaysForecast(city);
 
-    DailyForecast dailyForecast = map.get(0);
+    DailyForecast currentDayForecast = map.get(0);
 
-    currentTime.setText(weatherManager.getCurrentDateTime());
+    currentDayTime.setText(weatherManager.getCurrentDayTime());
 
-    //todo
-    //currentDayOfWeek.setText(dailyForecast.getDayOfWeek());
+    tempInfo.setText(currentDayForecast.getDayTemp());
+    tempFeels.setText("Feels like: " + currentDayForecast.getTempFeelsLike());
+    tempMax.setText("Max: " + currentDayForecast.getTempMax());
+    tempMin.setText("Min: " + currentDayForecast.getTempMin());
+    tempCity.setText(currentDayForecast.getCity().cityFormat() + ", " + currentDayForecast.getCity().getCountryCode());
 
+    weatherCondition.setImage(currentDayForecast.getIcon());
 
-    tempInfo.setText(dailyForecast.getDayTemp());
-    tempFeels.setText("Feels like: " + dailyForecast.getTempFeelsLike());
-    tempMax.setText("Max: " + dailyForecast.getTempMax());
-    tempMin.setText("Min: " + dailyForecast.getTempMin());
-    tempCity.setText(city + ", " + dailyForecast.getCity().getCountryCode());
+    windSpeed.setText(currentDayForecast.getWindSpeed());
+    sunrise.setText(currentDayForecast.getSunrise());
+    sunset.setText(currentDayForecast.getSunset());
+    humidity.setText(currentDayForecast.getHumidity());
+    uvIndex.setText(currentDayForecast.getUvIndex());
 
-    weatherCondition.setImage(dailyForecast.getIcon());
-
-    windSpeed.setText(dailyForecast.getWindSpeed());
-    sunrise.setText(dailyForecast.getSunrise());
-    sunset.setText(dailyForecast.getSunset());
-//    visibility.setText(weatherManager.getVisibility());
-    humidity.setText(dailyForecast.getHumidity());
-    uvIndex.setText(dailyForecast.getUvIndex());
-
-//    WebEngine webEngine = webView.getEngine();
-//    URL url = this.getClass().getResource("OpenWeatherMapLayer.html");
+//    var webEngine = webView.getEngine();
+//    var url = this.getClass().getResource("OpenWeatherMapLayer.html");
 //    assert url != null;
 //    webEngine.load(url.toString());
-  }
 
-  public void getSevenDaysContent(float lat, float lon) {
+    DailyForecast firstDayForecast = map.get(1);
 
-    //    String output =
-    //        getUrlContent(
-    //            "https://api.openweathermap.org/data/2.5/onecall?lat="
-    //                + lat
-    //                + "&lon="
-    //                + lon
-    //                + "&exclude=current,minutely,hourly,alerts&appid="
-    //                + API_KEY
-    //                + "&units="
-    //                + METRIC);
+    firstDayOfWeek.setText(firstDayForecast.getDayOfWeek());
+    firstDayImg.setImage(firstDayForecast.getIcon());
+    firstDayMin.setText(firstDayForecast.getTempMin());
+    firstDayMax.setText(firstDayForecast.getTempMax());
 
-    //    var json = new JSONObject(output);
-    //    var jsonArray = json.getJSONArray("daily");
-    //
-    //    for (var i = 0; i < jsonArray.length(); i++) {
-    //      System.out.println(jsonArray.getJSONObject(i));
-    //    }
-    //
-    //    firstDayMinMax.setText(getMinMaxValues(jsonArray, 0));
-    //    var image = new Image(getImageUrl(jsonArray.getJSONObject(0)));
-    //    firstDayImg.setImage(image);
-    //    var timeStamp = jsonArray.getJSONObject(0).getLong("dt");
-    //    firstDayOfWeek.setText(extractDayOfWeek(timeStamp));
-    //
-    //    secondDayMinMax.setText(getMinMaxValues(jsonArray, 1));
-    //    image = new Image(getImageUrl(jsonArray.getJSONObject(1)));
-    //    secondDayImg.setImage(image);
-    //    timeStamp = jsonArray.getJSONObject(1).getLong("dt");
-    //    secondDayOfWeek.setText(extractDayOfWeek(timeStamp));
-    //
-    //    thirdDayMinMax.setText(getMinMaxValues(jsonArray, 2));
-    //    image = new Image(getImageUrl(jsonArray.getJSONObject(2)));
-    //    thirdDayImg.setImage(image);
-    //    timeStamp = jsonArray.getJSONObject(2).getLong("dt");
-    //    thirdDayOfWeek.setText(extractDayOfWeek(timeStamp));
-    //
-    //    fourthDayMinMax.setText(getMinMaxValues(jsonArray, 3));
-    //    image = new Image(getImageUrl(jsonArray.getJSONObject(3)));
-    //    fourthDayImg.setImage(image);
-    //    timeStamp = jsonArray.getJSONObject(3).getLong("dt");
-    //    fourthDayOfWeek.setText(extractDayOfWeek(timeStamp));
-    //
-    //    fifthDayMinMax.setText(getMinMaxValues(jsonArray, 4));
-    //    image = new Image(getImageUrl(jsonArray.getJSONObject(4)));
-    //    fifthDayImg.setImage(image);
-    //    timeStamp = jsonArray.getJSONObject(4).getLong("dt");
-    //    fifthDayOfWeek.setText(extractDayOfWeek(timeStamp));
-    //
-    //    sixDayMinMax.setText(getMinMaxValues(jsonArray, 5));
-    //    image = new Image(getImageUrl(jsonArray.getJSONObject(5)));
-    //    sixDayImg.setImage(image);
-    //    timeStamp = jsonArray.getJSONObject(5).getLong("dt");
-    //    sixDayOfWeek.setText(extractDayOfWeek(timeStamp));
-    //
-    //    sevenDayMinMax.setText(getMinMaxValues(jsonArray, 6));
-    //    image = new Image(getImageUrl(jsonArray.getJSONObject(6)));
-    //    sevenDayImg.setImage(image);
-    //    timeStamp = jsonArray.getJSONObject(6).getLong("dt");
-    //    sevenDayOfWeek.setText(extractDayOfWeek(timeStamp));
-  }
+    DailyForecast secondDayForecast = map.get(2);
 
-  private String getMinMaxValues(JSONArray jsonArray, int index) {
-    return jsonArray.getJSONObject(index).getJSONObject("temp").getInt("min")
-        + CELSIUS
-        + " "
-        + jsonArray.getJSONObject(index).getJSONObject("temp").getInt("max")
-        + CELSIUS;
-  }
+    secondDayOfWeek.setText(secondDayForecast.getDayOfWeek());
+    secondDayImg.setImage(secondDayForecast.getIcon());
+    secondDayMin.setText(secondDayForecast.getTempMin());
+    secondDayMax.setText(secondDayForecast.getTempMax());
 
-  private String extractDayOfWeek(long timeStamp) {
+    DailyForecast thirdDayForecast = map.get(3);
 
-    Date date = new java.util.Date(timeStamp * 1000);
+    thirdDayOfWeek.setText(thirdDayForecast.getDayOfWeek());
+    thirdDayImg.setImage(thirdDayForecast.getIcon());
+    thirdDayMin.setText(thirdDayForecast.getTempMin());
+    thirdDayMax.setText(thirdDayForecast.getTempMax());
 
-    SimpleDateFormat simpleDateformat = new SimpleDateFormat("E", Locale.ENGLISH);
+    DailyForecast fourthDayForecast = map.get(4);
 
-    return simpleDateformat.format(date);
+    fourthDayOfWeek.setText(fourthDayForecast.getDayOfWeek());
+    fourthDayImg.setImage(fourthDayForecast.getIcon());
+    fourthDayMin.setText(fourthDayForecast.getTempMin());
+    fourthDayMax.setText(fourthDayForecast.getTempMax());
+
+    DailyForecast fifthDayForecast = map.get(5);
+
+    fifthDayOfWeek.setText(fifthDayForecast.getDayOfWeek());
+    fifthDayImg.setImage(fifthDayForecast.getIcon());
+    fifthDayMin.setText(fifthDayForecast.getTempMin());
+    fifthDayMax.setText(fifthDayForecast.getTempMax());
+
+    DailyForecast sixDayForecast = map.get(6);
+
+    sixDayOfWeek.setText(sixDayForecast.getDayOfWeek());
+    sixDayImg.setImage(sixDayForecast.getIcon());
+    sixDayMin.setText(sixDayForecast.getTempMin());
+    sixDayMax.setText(sixDayForecast.getTempMax());
+
+    DailyForecast sevenDayForecast = map.get(7);
+
+    sevenDayOfWeek.setText(sevenDayForecast.getDayOfWeek());
+    sevenDayImg.setImage(sevenDayForecast.getIcon());
+    sevenDayMin.setText(sevenDayForecast.getTempMin());
+    sevenDayMax.setText(sevenDayForecast.getTempMax());
   }
 }

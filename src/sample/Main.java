@@ -16,7 +16,7 @@ public class Main extends Application {
     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("weather-app.fxml")));
     primaryStage.setTitle("Weather");
     Scene scene = new Scene(root, 1280, 720);
-    scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("application.css")).toExternalForm());
+    scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("styles/style.css")).toExternalForm());
     primaryStage.setScene(scene);
     primaryStage.setResizable(false);
     primaryStage.setMaximized(false);

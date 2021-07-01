@@ -1,8 +1,10 @@
-package sample.models;
+package sample.service;
 
 import javafx.scene.image.Image;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import sample.models.City;
+import sample.models.DailyForecast;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -10,7 +12,10 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
 
 public class WeatherManager {
 
@@ -21,54 +26,10 @@ public class WeatherManager {
   private static final String CURRENT = "current";
   private static final String DAILY = "daily";
 
-
-  //  public void getCurrentWeather(String cityName) {
-  //
-  //    getCityInfo(cityName);
-  //
-  //    if (!cityName.equals("")) {
-  //      String output =
-  //          getUrlContent(
-  //              "https://api.openweathermap.org/data/2.5/onecall?lat="
-  //                  + city.getLat()
-  //                  + "&lon="
-  //                  + city.getLon()
-  //                  + "&exclude=minutely,hourly,alerts&appid="
-  //                  + API_KEY
-  //                  + "&units="
-  //                  + METRIC);
-  //
-  //      if (!output.isEmpty()) {
-  //
-  //        JSONObject json = new JSONObject(output);
-  //        JSONArray jsonArray = json.getJSONArray(DAILY);
-  //
-  //        getCurrentDateTime();
-  //
-  //        setTempCurrent(String.valueOf(json.getJSONObject(CURRENT).getInt("temp")));
-  //        setTempFeelsLike(json.getJSONObject(CURRENT).getFloat("feels_like") + UNITS);
-  //
-  //        setTempMax(jsonArray.getJSONObject(0).getJSONObject("temp").getFloat("max") + UNITS);
-  //        setTempMin(jsonArray.getJSONObject(0).getJSONObject("temp").getFloat("min") + UNITS);
-  //
-  //        setIcon(new Image(getImageUrl(json)));
-  //
-  //        setWindSpeed(json.getJSONObject(CURRENT).getFloat("wind_speed") + SPEED);
-  //        setSunrise(timeStampConvert(json.getJSONObject(CURRENT).getLong("sunrise")));
-  //        setSunset(timeStampConvert(json.getJSONObject(CURRENT).getLong("sunset")));
-  //
-  //        float visionRange = json.getJSONObject(CURRENT).getFloat("visibility") / 1000;
-  //        setVisibility(visionRange + " km");
-  //
-  //        setHumidity(json.getJSONObject(CURRENT).getInt("humidity") + "%");
-  //        setUvIndex(String.valueOf(json.getJSONObject(CURRENT).getFloat("uvi")));
-  //      }
-  //    }
-  //  }
-
   public Map<Integer, DailyForecast> getSevenDaysForecast(String cityName) {
 
-    //todo add metrics
+
+    // todo add metrics
 
     Map<Integer, DailyForecast> map = new HashMap<>();
 
@@ -93,8 +54,8 @@ public class WeatherManager {
 
         for (int index = 0; index < sevenDays.length(); index++) {
           long timeStamp = sevenDays.getJSONObject(index).getLong("dt");
-          String sunrise = String.valueOf(sevenDays.getJSONObject(index).getLong("sunrise"));
-          String sunset = String.valueOf(sevenDays.getJSONObject(index).getLong("sunset"));
+          long sunrise = sevenDays.getJSONObject(index).getLong("sunrise");
+          long sunset = sevenDays.getJSONObject(index).getLong("sunset");
           String dayTemperature =
               String.valueOf(sevenDays.getJSONObject(index).getJSONObject("temp").getInt("day"));
           String nightTemperature =
@@ -130,8 +91,8 @@ public class WeatherManager {
                   extractDayOfWeek(timeStamp),
                   city,
                   humidity,
-                  sunrise,
-                  sunset,
+                  timeStampConvert(sunrise),
+                  timeStampConvert(sunset),
                   windSpeed,
                   min,
                   max,
@@ -162,9 +123,7 @@ public class WeatherManager {
 
   private String timeStampConvert(long timeStamp) {
     Date date = new java.util.Date(timeStamp * 1000);
-
     SimpleDateFormat simpleDateformat = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
-
     return simpleDateformat.format(date);
   }
 
@@ -215,12 +174,10 @@ public class WeatherManager {
   }
 
   private String getImageUrl(String iconCode) {
-    //    JSONArray result = json.getJSONObject(CURRENT).getJSONArray("weather");
-    //    String iconCode = result.getJSONObject(0).getString("icon");
     return "https://openweathermap.org/img/w/" + iconCode + ".png";
   }
 
-  public String getCurrentDateTime() {
+  public String getCurrentDayTime() {
     SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
     Date time = new Date(System.currentTimeMillis());
     return LocalDate.now().getDayOfWeek().name() + ", " + formatter.format(time);
