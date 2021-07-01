@@ -1,6 +1,7 @@
 package sample;
 
 public enum Units {
-    METRICS,
+    STANDARD,
+    METRIC,
     IMPERIAL,
 }
