@@ -3,8 +3,6 @@ O
 src/sample/assets/fonts/OFL.txt,6\9\69baabec6c03d6e6a4c13bee3d75062b8219e07c
 K
 src/sample/assets/loupe.svg,7\c\7cb3474111c700143a00cc4965b95fc0257f1a6b
-S
-#src/sample/OpenWeatherMapLayer.html,5\a\5ab2054e8434d0154f9fd4958d4cd89f45e28df5
 p
 @.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml,7\c\7c5ad8ea3682abc1e44587c8e342f6032c50d9c8
 ~
@@ -21,5 +19,17 @@ s
 C.idea/libraries/Maven__org_checkerframework_checker_qual_2_11_1.xml,9\d\9d1b7b1f0025505a10d6f4e9be87540055f448e2
 a
 1.idea/libraries/Maven__org_json_json_20210307.xml,0\b\0bed2b47735b03040c53495cb119bdf451540808
-T
-$src/sample/models/DailyForecast.java,3\c\3c80a97bad32a960b79d236ffe465f8207d0873e
+Y
+).idea/artifacts/JavaFxApplication_jar.xml,9\b\9bf84fba7bc3340c30afc0f583e8968509f48446
+O
+.idea/libraries/javafx_base.xml,c\8\c8723350a4363abde97abd36370d4eb982c0dde0
+N
+.idea/libraries/javafx_swt.xml,8\b\8b1fb17263788d9d0e3b511edaedee05b8afe4d6
+K
+src/sample/models/City.java,9\b\9b415deacf6f7f7b58df4d0c0720b6ad01f9b2ad
+K
+src/sample/styles/style.css,b\2\b2dcb0b95df693e4e6700999010ff43249f587dd
+E
+src/sample/Units.java,d\e\de31309ce5c27619b8eb304a69f2612013325364
+E
+JavaFxApplication.iml,b\5\b50aed6d72d1817768c74e69a70aec416de2a178

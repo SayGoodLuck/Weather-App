@@ -3,6 +3,7 @@ package sample.service;
 import javafx.scene.image.Image;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import sample.MyOwnException;
 import sample.models.City;
 import sample.models.DailyForecast;
 
@@ -12,10 +13,10 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 public class WeatherManager {
 
@@ -26,14 +27,11 @@ public class WeatherManager {
   private static final String CURRENT = "current";
   private static final String DAILY = "daily";
 
-  public Map<Integer, DailyForecast> getSevenDaysForecast(String cityName) {
+  public List<DailyForecast> getSevenDaysForecast(String cityName) throws MyOwnException {
 
+    List<DailyForecast> dailyForecasts = new ArrayList<>();
 
-    // todo add metrics
-
-    Map<Integer, DailyForecast> map = new HashMap<>();
-
-    City city = getCityInfo(cityName);
+    var city = getCityInfo(cityName);
 
     if (!cityName.equals("")) {
       String output =
@@ -49,27 +47,27 @@ public class WeatherManager {
 
       if (!output.isEmpty()) {
 
-        JSONObject json = new JSONObject(output);
-        JSONArray sevenDays = json.getJSONArray(DAILY);
+        var json = new JSONObject(output);
+        var sevenDays = json.getJSONArray(DAILY);
 
-        for (int index = 0; index < sevenDays.length(); index++) {
-          long timeStamp = sevenDays.getJSONObject(index).getLong("dt");
-          long sunrise = sevenDays.getJSONObject(index).getLong("sunrise");
-          long sunset = sevenDays.getJSONObject(index).getLong("sunset");
-          String dayTemperature =
+        for (var index = 0; index < sevenDays.length(); index++) {
+          var timeStamp = sevenDays.getJSONObject(index).getLong("dt");
+          var sunrise = sevenDays.getJSONObject(index).getLong("sunrise");
+          var sunset = sevenDays.getJSONObject(index).getLong("sunset");
+          var dayTemperature =
               String.valueOf(sevenDays.getJSONObject(index).getJSONObject("temp").getInt("day"));
-          String nightTemperature =
+          var nightTemperature =
               String.valueOf(sevenDays.getJSONObject(index).getJSONObject("temp").getInt("night"));
-          String min =
+          var min =
               String.valueOf(sevenDays.getJSONObject(index).getJSONObject("temp").getInt("min"));
-          String max =
+          var max =
               String.valueOf(sevenDays.getJSONObject(index).getJSONObject("temp").getInt("max"));
-          String feelsLike =
+          var feelsLike =
               String.valueOf(
                   sevenDays.getJSONObject(index).getJSONObject("feels_like").getInt("day"));
-          String humidity = String.valueOf(sevenDays.getJSONObject(index).getInt("humidity"));
-          String windSpeed = String.valueOf(sevenDays.getJSONObject(index).getFloat("wind_speed"));
-          String iconCode =
+          var humidity = String.valueOf(sevenDays.getJSONObject(index).getInt("humidity"));
+          var windSpeed = String.valueOf(sevenDays.getJSONObject(index).getFloat("wind_speed"));
+          var iconCode =
               String.valueOf(
                   sevenDays
                       .getJSONObject(index)
@@ -77,16 +75,16 @@ public class WeatherManager {
                       .getJSONObject(0)
                       .getString("icon"));
 
-          String uvIndex = String.valueOf(sevenDays.getJSONObject(index).getFloat("uvi"));
-          String description =
+          var uvIndex = String.valueOf(sevenDays.getJSONObject(index).getFloat("uvi"));
+          var description =
               sevenDays
                   .getJSONObject(index)
                   .getJSONArray("weather")
                   .getJSONObject(0)
                   .getString("description");
 
-          Image icon = new Image(getImageUrl(iconCode));
-          DailyForecast dailyForecast =
+          var icon = new Image(getImageUrl(iconCode));
+          var dailyForecast =
               new DailyForecast(
                   extractDayOfWeek(timeStamp),
                   city,
@@ -104,30 +102,30 @@ public class WeatherManager {
                   description);
 
           System.out.println(dailyForecast);
-          map.put(index, dailyForecast);
+          dailyForecasts.add(index, dailyForecast);
         }
       }
     }
 
-    return map;
+    return dailyForecasts;
   }
 
   public String extractDayOfWeek(long timeStamp) {
 
-    Date date = new java.util.Date(timeStamp * 1000);
+    var date = new java.util.Date(timeStamp * 1000);
 
-    SimpleDateFormat simpleDateformat = new SimpleDateFormat("E", Locale.ENGLISH);
+    var simpleDateformat = new SimpleDateFormat("E", Locale.ENGLISH);
 
     return simpleDateformat.format(date);
   }
 
   private String timeStampConvert(long timeStamp) {
-    Date date = new java.util.Date(timeStamp * 1000);
-    SimpleDateFormat simpleDateformat = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
+    var date = new java.util.Date(timeStamp * 1000);
+    var simpleDateformat = new SimpleDateFormat("HH:mm", Locale.ENGLISH);
     return simpleDateformat.format(date);
   }
 
-  public City getCityInfo(String cityName) {
+  public City getCityInfo(String cityName) throws MyOwnException {
     String output =
         getUrlContent(
             "http://api.openweathermap.org/geo/1.0/direct?q="
@@ -137,28 +135,28 @@ public class WeatherManager {
                 + "&appid="
                 + API_KEY);
 
-    if (!output.isEmpty()) {
-      JSONArray json = new JSONArray(output);
-
-      return new City(
-          json.getJSONObject(0).getString("name"),
-          json.getJSONObject(0).getFloat("lon"),
-          json.getJSONObject(0).getFloat("lat"),
-          json.getJSONObject(0).getString("country"));
+    if (output.isEmpty()) {
+      System.out.println("output is empty");
+      throw new MyOwnException("output is empty");
     }
-    // todo
-    return null;
+
+    var json = new JSONArray(output);
+
+    return new City(
+        json.getJSONObject(0).getString("name"),
+        json.getJSONObject(0).getFloat("lon"),
+        json.getJSONObject(0).getFloat("lat"),
+        json.getJSONObject(0).getString("country"));
   }
 
   public String getUrlContent(String urlAddress) {
-    StringBuilder content = new StringBuilder();
+    var content = new StringBuilder();
 
     try {
-      URL url = new URL(urlAddress);
+      var url = new URL(urlAddress);
       URLConnection urlConn = url.openConnection();
 
-      BufferedReader bufferedReader =
-          new BufferedReader(new InputStreamReader(urlConn.getInputStream()));
+      var bufferedReader = new BufferedReader(new InputStreamReader(urlConn.getInputStream()));
       String line;
 
       while ((line = bufferedReader.readLine()) != null) {
@@ -178,8 +176,8 @@ public class WeatherManager {
   }
 
   public String getCurrentDayTime() {
-    SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
-    Date time = new Date(System.currentTimeMillis());
+    var formatter = new SimpleDateFormat("HH:mm");
+    var time = new Date(System.currentTimeMillis());
     return LocalDate.now().getDayOfWeek().name() + ", " + formatter.format(time);
   }
 }
