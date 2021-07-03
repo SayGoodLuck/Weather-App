@@ -158,10 +158,10 @@ public class WeatherController {
     description.setText(currentDayForecast.getDescription());
 
 
-//    var webEngine = webView.getEngine();
-//    var url = this.getClass().getResource("src/resources/OpenWeatherMapLayer.html");
-//    assert url != null;
-//    webEngine.load(url.toString());
+    var webEngine = webView.getEngine();
+    var url = this.getClass().getResource("/OpenWeatherMapLayer.html");
+    assert url != null;
+    webEngine.load(url.toString());
 
     DailyForecast firstDayForecast = map.get(1);
 
