@@ -22,9 +22,6 @@ public class WeatherManager {
 
   private static final String API_KEY = "900ea254740cee343805d46750147cdc";
   private static final String METRIC = "metric";
-  private static final String UNITS = "\u2103";
-  private static final String SPEED = "km/h";
-  private static final String CURRENT = "current";
   private static final String DAILY = "daily";
 
   public List<DailyForecast> getSevenDaysForecast(String cityName) throws MyOwnException {

@@ -33,3 +33,13 @@ E
 src/sample/Units.java,d\e\de31309ce5c27619b8eb304a69f2612013325364
 E
 JavaFxApplication.iml,b\5\b50aed6d72d1817768c74e69a70aec416de2a178
+J
+dependency-reduced-pom.xml,8\a\8a88dfd5af6f2db5a5431581b56e901f5f143d92
+T
+$src/sample/models/DailyForecast.java,3\c\3c80a97bad32a960b79d236ffe465f8207d0873e
+D
+src/sample/Main.java,a\d\ad8e8bd4ff8f02a914e3d9ca1bcc32dfc8c503a9
+N
+src/sample/MyOwnException.java,b\6\b6861fa077d5fc0895f09ed2874dd5b933331a20
+K
+src/sample/weather-app.fxml,6\7\67914db06f672cdf5e3f56921626f5656b139568

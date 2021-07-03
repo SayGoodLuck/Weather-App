@@ -9,20 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="...">
-      <change afterPath="$PROJECT_DIR$/src/sample/Metrics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/MyOwnException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/javafx.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/a/5ab2054e8434d0154f9fd4958d4cd89f45e28df5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="metrics added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/OpenWeatherMapLayer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/OpenWeatherMapLayer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/controllers/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/controllers/WeatherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Metrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Metrics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/service/WeatherManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/service/WeatherManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/weather-app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/weather-app.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +171,7 @@
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../libs/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib/javafx.web.jar" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.30023095" />
     <property name="recentsLimit" value="5" />
@@ -226,7 +217,7 @@
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="sample.Main" />
       <module name="weather-app" />
-      <option name="VM_PARAMETERS" value="--module-path D:\CodeWorkspace\java\libs\openjfx-11.0.2_windows-x64_bin-sdk\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml --add-modules=javafx.swing,javafx.graphics,javafx.fxml,javafx.media,javafx.web --add-reads javafx.graphics=ALL-UNNAMED --add-opens javafx.controls/com.sun.javafx.charts=ALL-UNNAMED --add-opens javafx.graphics/com.sun.javafx.iio=ALL-UNNAMED --add-opens javafx.graphics/com.sun.javafx.iio.common=ALL-UNNAMED --add-opens javafx.graphics/com.sun.javafx.css=ALL-UNNAMED --add-opens javafx.base/com.sun.javafx.runtime=ALL-UNNAMED" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;D:\CodeWorkspace\java\libs\openjfx-11.0.2_windows-x64_bin-sdk\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -241,17 +232,6 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -325,7 +305,7 @@
       <workItem from="1624797549801" duration="294000" />
       <workItem from="1625162967385" duration="185000" />
       <workItem from="1625233443120" duration="76000" />
-      <workItem from="1625233548981" duration="4587000" />
+      <workItem from="1625233548981" duration="5184000" />
     </task>
     <task id="LOCAL-00001" summary="error fix.&#10;added icons and more info">
       <created>1623428623704</created>
@@ -446,7 +426,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625163137009</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="metrics added">
+      <created>1625238394889</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1625238394889</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -517,7 +504,8 @@
     <MESSAGE value="seven days instead of current" />
     <MESSAGE value="get seven days from json works" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="metrics added" />
+    <option name="LAST_COMMIT_MESSAGE" value="metrics added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
