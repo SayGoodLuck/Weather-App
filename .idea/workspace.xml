@@ -9,19 +9,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="added shading maven plugin &#10;run it with mvn package">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="ref packages">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_17_ea_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_17_ea_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_17_ea_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_17_ea_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_17_ea_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_17_ea_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_17_ea_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_win_17_ea_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_web_17_ea_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_web_win_17_ea_13.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/b/2b5a4db37d0e2532d32fb3812388f5a985ccc5ac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8a88dfd5af6f2db5a5431581b56e901f5f143d92" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/3/9374dbbf5f935279edfa8c37e350c2d044212d6b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/7/b7d5711bf023dcad04ed402da03a370370155c63" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f01fa3cc38467805c9ad58fa176b2fe7146a6a5c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f6022cdee554c4a3311fa1d27d884698c7f4dbf8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/5/05ec0aa0d9d1152be2d26019649757a9eab46909" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9b8e432a1ff1a5b795506b4ff6be826a76ec0dac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/0/a09a658df0a4c5b6b128a21cb1ba2c700320c749" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/8/d897d64d51bb569b4f63e82551d750dcf174cae6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/3/e3d5ba0b1e8700a1e2402445d5573928b7dee8e9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/ede9824103efc3cfbd9e4133afa851c7f5bc194a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/f/ef49582ed6d6f6f4a538a87749851efeb8834b96" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/Metrics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/Metrics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/MyOwnException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/MyOwnException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/SuperMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/SuperMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/Units.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/Units.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/controllers/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/controllers/WeatherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/models/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/models/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/models/DailyForecast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/models/DailyForecast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sample/service/WeatherManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/service/WeatherManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/konstantin/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/konstantin/controllers/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/controllers/WeatherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/konstantin/models/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/models/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/konstantin/service/WeatherManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/service/WeatherManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/weather-app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/weather-app.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -227,6 +246,7 @@
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="dev.konstantin.Main" />
       <module name="weather-app" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;D:\CodeWorkspace\java\libs\openjfx-11.0.2_windows-x64_bin-sdk\javafx-sdk-11.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -330,6 +350,8 @@
       <workItem from="1625319244153" duration="2942000" />
       <workItem from="1625324811460" duration="200000" />
       <workItem from="1625395405589" duration="2803000" />
+      <workItem from="1625399896189" duration="2082000" />
+      <workItem from="1625420240190" duration="6191000" />
     </task>
     <task id="LOCAL-00001" summary="error fix.&#10;added icons and more info">
       <created>1623428623704</created>
@@ -492,7 +514,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625398763957</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="ref packages">
+      <created>1625399303227</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1625399303227</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -569,7 +598,8 @@
     <MESSAGE value="before delte javafx deps" />
     <MESSAGE value="you can run it from maven only with mvn clean javafx:run" />
     <MESSAGE value="added shading maven plugin &#10;run it with mvn package" />
-    <option name="LAST_COMMIT_MESSAGE" value="added shading maven plugin &#10;run it with mvn package" />
+    <MESSAGE value="ref packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="ref packages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

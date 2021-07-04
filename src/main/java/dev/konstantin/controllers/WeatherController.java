@@ -2,6 +2,7 @@ package dev.konstantin.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
@@ -114,9 +115,11 @@ public class WeatherController {
       ex.printStackTrace();
     }
 
+    getData.setDefaultButton(true);
     getData.setOnAction(
         event -> {
           String userCity = city.getText().trim();
+          city.clear();
           try {
             getContent(userCity);
           } catch (MyOwnException ex) {
@@ -139,10 +142,10 @@ public class WeatherController {
 
     currentDayTime.setText(weatherManager.getCurrentDayTime());
 
-    tempInfo.setText(currentDayForecast.getDayTemp());
-    tempFeels.setText("Feels like: " + currentDayForecast.getTempFeelsLike());
-    tempMax.setText("Max: " + currentDayForecast.getTempMax() + Metrics.CELSIUS);
-    tempMin.setText("Min: " + currentDayForecast.getTempMin() + Metrics.CELSIUS);
+    tempInfo.setText(currentDayForecast.getDayTemp() + Metrics.CELSIUS);
+    tempFeels.setText(currentDayForecast.getTempFeelsLike());
+    tempMax.setText(currentDayForecast.getTempMax() + Metrics.CELSIUS);
+    tempMin.setText(currentDayForecast.getTempMin() + Metrics.CELSIUS);
     tempCity.setText(
         currentDayForecast.getCity().cityFormat()
             + ", "
@@ -156,7 +159,6 @@ public class WeatherController {
     humidity.setText(currentDayForecast.getHumidity() + Metrics.PERCENT);
     uvIndex.setText(currentDayForecast.getUvIndex());
     description.setText(currentDayForecast.getDescription());
-
 
     var webEngine = webView.getEngine();
     var url = this.getClass().getResource("/views/OpenWeatherMapLayer.html");

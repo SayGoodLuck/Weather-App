@@ -24,10 +24,6 @@ public class City {
     return countryCode;
   }
 
-  public String getName() {
-    return name;
-  }
-
   public float getLon() {
     return lon;
   }
@@ -36,26 +32,9 @@ public class City {
     return lat;
   }
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public void setLon(float lon) {
-    this.lon = lon;
-  }
-
-  public void setLat(float lat) {
-    this.lat = lat;
-  }
-
-  public void setCountryCode(String countryCode) {
-    this.countryCode = countryCode;
-  }
-
   public String cityFormat() {
     name.toLowerCase();
 
-    //Matcher matcher = Pattern.compile("(?:^| )[^a-z]*[a-z]").matcher(name);
     Pattern p = Pattern.compile("\\b([A-Z]\\w*)\\b");
     Matcher matcher = p.matcher(name);
 

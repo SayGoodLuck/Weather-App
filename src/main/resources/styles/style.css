@@ -7,6 +7,16 @@
     -fx-font-family: Montserrat Black;
 }
 
+.featuresFontSize {
+    -fx-font-size: 20;
+    -fx-font-family: "Montserrat Medium";
+}
+
+#currentDayOfWeek {
+    -fx-font-family: "Montserrat Medium";
+    -fx-font-size: 15;
+}
+
 .root {
     -fx-font-family: Montserrat;
     -fx-background-color: rgba(245, 245, 245, 0.79);
@@ -16,7 +26,16 @@
     -fx-background-color: #ffffff;
     -fx-background-radius: 10, 10, 10, 10;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
+}
 
+.daysOfWeekFont {
+    -fx-font-family: "Montserrat Medium";
+    -fx-font-size: 14;
+}
+
+.daysTempTextSize {
+    -fx-font-family: "Montserrat Medium";
+    -fx-font-size: 14;
 }
 
 .features {
@@ -45,11 +64,12 @@
 
 #temp_info {
     -fx-font-size: 45;
-    /*-fx-background-color: rgba(255, 255, 255, 100);*/
+    -fx-font-family: "Montserrat Medium";
 }
 
 #temp_city {
-    -fx-font-size: 25;
+    -fx-font-size: 30;
+    -fx-font-family: "Montserrat Medium";
 }
 
 #webView {
@@ -61,8 +81,5 @@
     -fx-font-size: 20;
 }
 
-.tabsSize {
-
-}
 
 

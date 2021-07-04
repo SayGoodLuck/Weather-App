@@ -1,12 +1,15 @@
 package dev.konstantin.service;
 
+import javafx.scene.Node;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import dev.konstantin.MyOwnException;
 import dev.konstantin.models.City;
 import dev.konstantin.models.DailyForecast;
 
+import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -108,11 +111,8 @@ public class WeatherManager {
   }
 
   public String extractDayOfWeek(long timeStamp) {
-
     var date = new java.util.Date(timeStamp * 1000);
-
     var simpleDateformat = new SimpleDateFormat("E", Locale.ENGLISH);
-
     return simpleDateformat.format(date);
   }
 

@@ -13,10 +13,13 @@ public class Main extends Application {
 
   @Override
   public void start(Stage primaryStage) throws Exception {
-    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/weather-app.fxml")));
+    Parent root =
+        FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/weather-app.fxml")));
     primaryStage.setTitle("Weather");
     Scene scene = new Scene(root, 1280, 720);
-    scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/styles/style.css")).toExternalForm());
+    scene
+        .getStylesheets()
+        .add(Objects.requireNonNull(getClass().getResource("/styles/style.css")).toExternalForm());
     primaryStage.setScene(scene);
     primaryStage.setResizable(false);
     primaryStage.setMaximized(false);

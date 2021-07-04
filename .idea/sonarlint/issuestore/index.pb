@@ -23,17 +23,15 @@ N
 .idea/libraries/javafx_swt.xml,8\b\8b1fb17263788d9d0e3b511edaedee05b8afe4d6
 E
 JavaFxApplication.iml,b\5\b50aed6d72d1817768c74e69a70aec416de2a178
-U
-%src/main/java/sample/models/City.java,e\d\ede9824103efc3cfbd9e4133afa851c7f5bc194a
-Q
-!src/main/java/sample/Metrics.java,a\0\a09a658df0a4c5b6b128a21cb1ba2c700320c749
-X
-(src/main/java/sample/MyOwnException.java,d\8\d897d64d51bb569b4f63e82551d750dcf174cae6
-O
-src/main/java/sample/Units.java,0\5\05ec0aa0d9d1152be2d26019649757a9eab46909
-S
-#src/main/resources/styles/style.css,e\f\ef49582ed6d6f6f4a538a87749851efeb8834b96
+J
+.idea/libraries/javafx.xml,f\0\f01fa3cc38467805c9ad58fa176b2fe7146a6a5c
+Y
+)src/main/java/dev/konstantin/Metrics.java,9\3\9374dbbf5f935279edfa8c37e350c2d044212d6b
+`
+0src/main/java/dev/konstantin/MyOwnException.java,2\b\2b5a4db37d0e2532d32fb3812388f5a985ccc5ac
 [
-+src/main/resources/OpenWeatherMapLayer.html,9\b\9b8e432a1ff1a5b795506b4ff6be826a76ec0dac
-S
-#src/main/resources/weather-app.fxml,e\3\e3d5ba0b1e8700a1e2402445d5573928b7dee8e9
++src/main/java/dev/konstantin/SuperMain.java,b\7\b7d5711bf023dcad04ed402da03a370370155c63
+W
+'src/main/java/dev/konstantin/Units.java,f\6\f6022cdee554c4a3311fa1d27d884698c7f4dbf8
+J
+dependency-reduced-pom.xml,8\a\8a88dfd5af6f2db5a5431581b56e901f5f143d92
