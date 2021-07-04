@@ -1,11 +1,11 @@
-package sample.service;
+package dev.konstantin.service;
 
 import javafx.scene.image.Image;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import sample.MyOwnException;
-import sample.models.City;
-import sample.models.DailyForecast;
+import dev.konstantin.MyOwnException;
+import dev.konstantin.models.City;
+import dev.konstantin.models.DailyForecast;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

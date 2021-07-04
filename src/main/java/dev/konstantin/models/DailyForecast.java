@@ -1,4 +1,4 @@
-package sample.models;
+package dev.konstantin.models;
 
 import javafx.scene.image.Image;
 

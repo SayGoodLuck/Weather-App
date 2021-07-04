@@ -1,4 +1,4 @@
-package sample;
+package dev.konstantin;
 
 public enum Units {
     STANDARD,

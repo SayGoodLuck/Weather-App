@@ -1,4 +1,4 @@
-package sample.models;
+package dev.konstantin.models;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -1,4 +1,4 @@
-package sample.controllers;
+package dev.konstantin.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -6,10 +6,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
-import sample.Metrics;
-import sample.MyOwnException;
-import sample.models.DailyForecast;
-import sample.service.WeatherManager;
+import dev.konstantin.Metrics;
+import dev.konstantin.MyOwnException;
+import dev.konstantin.models.DailyForecast;
+import dev.konstantin.service.WeatherManager;
 
 import java.util.List;
 

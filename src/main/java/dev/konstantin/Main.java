@@ -1,4 +1,4 @@
-package sample;
+package dev.konstantin;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

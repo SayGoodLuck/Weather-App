@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="root" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.WeatherController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="root" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.konstantin.controllers.WeatherController">
     <AnchorPane id="left_bar" prefHeight="727.0" prefWidth="330.0" styleClass="leftBar">
         <Text id="temp_info" fx:id="tempInfo" layoutX="22.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15" wrappingWidth="229.00000205263495" AnchorPane.topAnchor="231.0" />
         <Text id="temp_feels" fx:id="tempFeels" layoutX="22.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Feels like 20" wrappingWidth="154.5937271118164" />

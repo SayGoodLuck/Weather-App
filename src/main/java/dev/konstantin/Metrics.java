@@ -1,4 +1,4 @@
-package sample;
+package dev.konstantin;
 
 public class Metrics {
   public static final String SPEED = "km/h";
