@@ -11,26 +11,8 @@
     <properties>
         <maven.compiler.target>11</maven.compiler.target>
         <maven.compiler.source>11</maven.compiler.source>
-        <!--        <maven.compiler.release>11</maven.compiler.release>-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jvm.options>--module-path
-            D:\CodeWorkspace\java\libs\openjfx-11.0.2_windows-x64_bin-sdk\javafx-sdk-11.0.2\lib
-            --add-modules
-            javafx.controls,javafx.fxml
-            --add-modules=javafx.swing,javafx.graphics,javafx.fxml,javafx.media,javafx.web
-            --add-reads
-            javafx.graphics=ALL-UNNAMED
-            --add-opens
-            javafx.controls/com.sun.javafx.charts=ALL-UNNAMED
-            --add-opens
-            javafx.graphics/com.sun.javafx.iio=ALL-UNNAMED
-            --add-opens
-            javafx.graphics/com.sun.javafx.iio.common=ALL-UNNAMED
-            --add-opens
-            javafx.graphics/com.sun.javafx.css=ALL-UNNAMED
-            --add-opens
-            javafx.base/com.sun.javafx.runtime=ALL-UNNAMED
-        </jvm.options>
+        <javafx.maven.plugin.version>0.0.6</javafx.maven.plugin.version>
     </properties>
 
     <dependencies>
@@ -52,50 +34,19 @@
             <version>17-ea+13</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-base -->
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-base</artifactId>
-            <version>17-ea+13</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-fxml -->
+
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.openjfx/javafx-fxml &ndash;&gt;-->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>17-ea+13</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-graphics -->
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-graphics</artifactId>
-            <version>17-ea+13</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-media -->
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-media</artifactId>
-            <version>17-ea+13</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-swing -->
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-swing</artifactId>
-            <version>17-ea+13</version>
-        </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.openjfx/javafx-web -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-web</artifactId>
             <version>17-ea+13</version>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-graphics</artifactId>
-            <version>11</version>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
-            <version>11</version>
         </dependency>
 
 
@@ -117,11 +68,19 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>${javafx.maven.plugin.version}</version>
+                <configuration>
+                    <mainClass>sample.Main</mainClass>
+                </configuration>
+            </plugin>
+
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
                 <configuration>
-                    <compilerArgs>${jvm.options}</compilerArgs>
                     <source>11</source>
                     <target>11</target>
                     <verbose>true</verbose>
@@ -171,7 +130,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 </project>
