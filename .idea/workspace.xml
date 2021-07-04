@@ -10,7 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="you can run it from maven only with mvn clean javafx:run">
+      <change afterPath="$PROJECT_DIR$/src/main/java/sample/SuperMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_17_ea_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_17_ea_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_17_ea_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_17_ea_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_17_ea_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_17_ea_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_17_ea_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_win_17_ea_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_web_17_ea_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_web_win_17_ea_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample/controllers/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sample/controllers/WeatherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/OpenWeatherMapLayer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/views/OpenWeatherMapLayer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,11 +193,11 @@
       <recent name="D:\CodeWorkspace\java\Weather\src\sample\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CodeWorkspace\java\Weather\src\main\resources\views" />
       <recent name="D:\CodeWorkspace\java\Weather\src\main\resources" />
       <recent name="D:\CodeWorkspace\java\Weather\src\main" />
       <recent name="D:\CodeWorkspace\java\Weather\src\main\java" />
       <recent name="D:\CodeWorkspace\java\Weather\src\resources" />
-      <recent name="D:\CodeWorkspace\java\Weather\src\sample\styles" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">

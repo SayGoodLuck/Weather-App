@@ -159,7 +159,7 @@ public class WeatherController {
 
 
     var webEngine = webView.getEngine();
-    var url = this.getClass().getResource("/OpenWeatherMapLayer.html");
+    var url = this.getClass().getResource("/views/OpenWeatherMapLayer.html");
     assert url != null;
     webEngine.load(url.toString());
 
