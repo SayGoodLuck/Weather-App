@@ -1,8 +1,4 @@
 
-O
-src/sample/assets/fonts/OFL.txt,6\9\69baabec6c03d6e6a4c13bee3d75062b8219e07c
-K
-src/sample/assets/loupe.svg,7\c\7cb3474111c700143a00cc4965b95fc0257f1a6b
 p
 @.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml,7\c\7c5ad8ea3682abc1e44587c8e342f6032c50d9c8
 ~
@@ -25,21 +21,19 @@ O
 .idea/libraries/javafx_base.xml,c\8\c8723350a4363abde97abd36370d4eb982c0dde0
 N
 .idea/libraries/javafx_swt.xml,8\b\8b1fb17263788d9d0e3b511edaedee05b8afe4d6
-K
-src/sample/models/City.java,9\b\9b415deacf6f7f7b58df4d0c0720b6ad01f9b2ad
-K
-src/sample/styles/style.css,b\2\b2dcb0b95df693e4e6700999010ff43249f587dd
-E
-src/sample/Units.java,d\e\de31309ce5c27619b8eb304a69f2612013325364
 E
 JavaFxApplication.iml,b\5\b50aed6d72d1817768c74e69a70aec416de2a178
-J
-dependency-reduced-pom.xml,8\a\8a88dfd5af6f2db5a5431581b56e901f5f143d92
-T
-$src/sample/models/DailyForecast.java,3\c\3c80a97bad32a960b79d236ffe465f8207d0873e
-D
-src/sample/Main.java,a\d\ad8e8bd4ff8f02a914e3d9ca1bcc32dfc8c503a9
-N
-src/sample/MyOwnException.java,b\6\b6861fa077d5fc0895f09ed2874dd5b933331a20
-K
-src/sample/weather-app.fxml,6\7\67914db06f672cdf5e3f56921626f5656b139568
+U
+%src/main/java/sample/models/City.java,e\d\ede9824103efc3cfbd9e4133afa851c7f5bc194a
+Q
+!src/main/java/sample/Metrics.java,a\0\a09a658df0a4c5b6b128a21cb1ba2c700320c749
+X
+(src/main/java/sample/MyOwnException.java,d\8\d897d64d51bb569b4f63e82551d750dcf174cae6
+O
+src/main/java/sample/Units.java,0\5\05ec0aa0d9d1152be2d26019649757a9eab46909
+S
+#src/main/resources/styles/style.css,e\f\ef49582ed6d6f6f4a538a87749851efeb8834b96
+[
++src/main/resources/OpenWeatherMapLayer.html,9\b\9b8e432a1ff1a5b795506b4ff6be826a76ec0dac
+S
+#src/main/resources/weather-app.fxml,e\3\e3d5ba0b1e8700a1e2402445d5573928b7dee8e9
