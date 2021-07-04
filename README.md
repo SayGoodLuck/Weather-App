@@ -9,4 +9,6 @@ development in progress.
 
 ![alt text](https://i.imgur.com/GNcEERd.png)
 
+you can run it from maven with mvn javafx:run
+
 
