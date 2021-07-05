@@ -2,6 +2,8 @@ package dev.konstantin.models;
 
 import javafx.scene.image.Image;
 
+import java.util.Objects;
+
 public class DailyForecast {
 
   private String dayOfWeek;
@@ -117,6 +119,46 @@ public class DailyForecast {
 
   public String getDescription() {
     return description;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    DailyForecast that = (DailyForecast) o;
+    return dayOfWeek.equals(that.dayOfWeek)
+        && city.equals(that.city)
+        && humidity.equals(that.humidity)
+        && sunrise.equals(that.sunrise)
+        && sunset.equals(that.sunset)
+        && windSpeed.equals(that.windSpeed)
+        && tempMin.equals(that.tempMin)
+        && tempMax.equals(that.tempMax)
+        && dayTemp.equals(that.dayTemp)
+        && nightTemp.equals(that.nightTemp)
+        && tempFeelsLike.equals(that.tempFeelsLike)
+        && icon.equals(that.icon)
+        && uvIndex.equals(that.uvIndex)
+        && description.equals(that.description);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(
+        dayOfWeek,
+        city,
+        humidity,
+        sunrise,
+        sunset,
+        windSpeed,
+        tempMin,
+        tempMax,
+        dayTemp,
+        nightTemp,
+        tempFeelsLike,
+        icon,
+        uvIndex,
+        description);
   }
 
   @Override

@@ -1,19 +1,18 @@
 package dev.konstantin.models;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.Objects;
 
 public class City {
 
   private String name;
 
-  private float lon;
+  private double lon;
 
-  private float lat;
+  private double lat;
 
   private String countryCode;
 
-  public City(String name, float lon, float lat, String countryCode) {
+  public City(String name, double lon, double lat, String countryCode) {
     this.name = name;
     this.lon = lon;
     this.lat = lat;
@@ -24,25 +23,51 @@ public class City {
     return countryCode;
   }
 
-  public float getLon() {
+  public String getName() {
+    return name;
+  }
+
+  public double getLon() {
     return lon;
   }
 
-  public float getLat() {
+  public double getLat() {
     return lat;
   }
 
   public String cityFormat() {
-    name.toLowerCase();
+    return name.toUpperCase();
+  }
 
-    Pattern p = Pattern.compile("\\b([A-Z]\\w*)\\b");
-    Matcher matcher = p.matcher(name);
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    City city = (City) o;
+    return Double.compare(city.lon, lon) == 0
+        && Double.compare(city.lat, lat) == 0
+        && Objects.equals(name, city.name)
+        && Objects.equals(countryCode, city.countryCode);
+  }
 
-    StringBuffer result = new StringBuffer();
-    while (matcher.find()) {
-      matcher.appendReplacement(result, matcher.group().toUpperCase());
-    }
+  @Override
+  public int hashCode() {
+    return Objects.hash(name, lon, lat, countryCode);
+  }
 
-    return matcher.appendTail(result).toString();
+  @Override
+  public String toString() {
+    return "City{"
+        + "name='"
+        + name
+        + '\''
+        + ", lon="
+        + lon
+        + ", lat="
+        + lat
+        + ", countryCode='"
+        + countryCode
+        + '\''
+        + '}';
   }
 }

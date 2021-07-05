@@ -1,7 +1,7 @@
 package dev.konstantin;
 
-public enum Units {
-    STANDARD,
-    METRIC,
-    IMPERIAL,
+public class Units {
+  public static final String SPEED = "km/h";
+  public static final String PERCENT = "%";
+  public static final String CELSIUS = "\u00B0";
 }

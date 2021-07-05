@@ -1,16 +1,15 @@
 package dev.konstantin.controllers;
 
+import dev.konstantin.Units;
+import dev.konstantin.exceptions.WeatherManagerException;
+import dev.konstantin.models.DailyForecast;
+import dev.konstantin.service.WeatherManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
-import dev.konstantin.Metrics;
-import dev.konstantin.MyOwnException;
-import dev.konstantin.models.DailyForecast;
-import dev.konstantin.service.WeatherManager;
 
 import java.util.List;
 
@@ -111,7 +110,7 @@ public class WeatherController {
 
     try {
       getContent(DEFAULT_CITY);
-    } catch (MyOwnException ex) {
+    } catch (WeatherManagerException ex) {
       ex.printStackTrace();
     }
 
@@ -122,13 +121,13 @@ public class WeatherController {
           city.clear();
           try {
             getContent(userCity);
-          } catch (MyOwnException ex) {
+          } catch (WeatherManagerException ex) {
             ex.printStackTrace();
           }
         });
   }
 
-  public void getContent(String city) throws MyOwnException {
+  public void getContent(String city) throws WeatherManagerException {
 
     if (city.isEmpty()) {
       System.out.println("city is null");
@@ -142,10 +141,10 @@ public class WeatherController {
 
     currentDayTime.setText(weatherManager.getCurrentDayTime());
 
-    tempInfo.setText(currentDayForecast.getDayTemp() + Metrics.CELSIUS);
+    tempInfo.setText(currentDayForecast.getDayTemp() + Units.CELSIUS);
     tempFeels.setText(currentDayForecast.getTempFeelsLike());
-    tempMax.setText(currentDayForecast.getTempMax() + Metrics.CELSIUS);
-    tempMin.setText(currentDayForecast.getTempMin() + Metrics.CELSIUS);
+    tempMax.setText(currentDayForecast.getTempMax() + Units.CELSIUS);
+    tempMin.setText(currentDayForecast.getTempMin() + Units.CELSIUS);
     tempCity.setText(
         currentDayForecast.getCity().cityFormat()
             + ", "
@@ -153,10 +152,10 @@ public class WeatherController {
 
     weatherCondition.setImage(currentDayForecast.getIcon());
 
-    windSpeed.setText(currentDayForecast.getWindSpeed() + Metrics.SPEED);
+    windSpeed.setText(currentDayForecast.getWindSpeed() + Units.SPEED);
     sunrise.setText(currentDayForecast.getSunrise());
     sunset.setText(currentDayForecast.getSunset());
-    humidity.setText(currentDayForecast.getHumidity() + Metrics.PERCENT);
+    humidity.setText(currentDayForecast.getHumidity() + Units.PERCENT);
     uvIndex.setText(currentDayForecast.getUvIndex());
     description.setText(currentDayForecast.getDescription());
 
@@ -169,49 +168,49 @@ public class WeatherController {
 
     firstDayOfWeek.setText(firstDayForecast.getDayOfWeek());
     firstDayImg.setImage(firstDayForecast.getIcon());
-    firstDayMin.setText(firstDayForecast.getTempMin() + Metrics.CELSIUS);
-    firstDayMax.setText(firstDayForecast.getTempMax() + Metrics.CELSIUS);
+    firstDayMin.setText(firstDayForecast.getTempMin() + Units.CELSIUS);
+    firstDayMax.setText(firstDayForecast.getTempMax() + Units.CELSIUS);
 
     DailyForecast secondDayForecast = map.get(2);
 
     secondDayOfWeek.setText(secondDayForecast.getDayOfWeek());
     secondDayImg.setImage(secondDayForecast.getIcon());
-    secondDayMin.setText(secondDayForecast.getTempMin() + Metrics.CELSIUS);
-    secondDayMax.setText(secondDayForecast.getTempMax() + Metrics.CELSIUS);
+    secondDayMin.setText(secondDayForecast.getTempMin() + Units.CELSIUS);
+    secondDayMax.setText(secondDayForecast.getTempMax() + Units.CELSIUS);
 
     DailyForecast thirdDayForecast = map.get(3);
 
     thirdDayOfWeek.setText(thirdDayForecast.getDayOfWeek());
     thirdDayImg.setImage(thirdDayForecast.getIcon());
-    thirdDayMin.setText(thirdDayForecast.getTempMin() + Metrics.CELSIUS);
-    thirdDayMax.setText(thirdDayForecast.getTempMax() + Metrics.CELSIUS);
+    thirdDayMin.setText(thirdDayForecast.getTempMin() + Units.CELSIUS);
+    thirdDayMax.setText(thirdDayForecast.getTempMax() + Units.CELSIUS);
 
     DailyForecast fourthDayForecast = map.get(4);
 
     fourthDayOfWeek.setText(fourthDayForecast.getDayOfWeek());
     fourthDayImg.setImage(fourthDayForecast.getIcon());
-    fourthDayMin.setText(fourthDayForecast.getTempMin() + Metrics.CELSIUS);
-    fourthDayMax.setText(fourthDayForecast.getTempMax() + Metrics.CELSIUS);
+    fourthDayMin.setText(fourthDayForecast.getTempMin() + Units.CELSIUS);
+    fourthDayMax.setText(fourthDayForecast.getTempMax() + Units.CELSIUS);
 
     DailyForecast fifthDayForecast = map.get(5);
 
     fifthDayOfWeek.setText(fifthDayForecast.getDayOfWeek());
     fifthDayImg.setImage(fifthDayForecast.getIcon());
-    fifthDayMin.setText(fifthDayForecast.getTempMin() + Metrics.CELSIUS);
-    fifthDayMax.setText(fifthDayForecast.getTempMax() + Metrics.CELSIUS);
+    fifthDayMin.setText(fifthDayForecast.getTempMin() + Units.CELSIUS);
+    fifthDayMax.setText(fifthDayForecast.getTempMax() + Units.CELSIUS);
 
     DailyForecast sixDayForecast = map.get(6);
 
     sixDayOfWeek.setText(sixDayForecast.getDayOfWeek());
     sixDayImg.setImage(sixDayForecast.getIcon());
-    sixDayMin.setText(sixDayForecast.getTempMin() + Metrics.CELSIUS);
-    sixDayMax.setText(sixDayForecast.getTempMax() + Metrics.CELSIUS);
+    sixDayMin.setText(sixDayForecast.getTempMin() + Units.CELSIUS);
+    sixDayMax.setText(sixDayForecast.getTempMax() + Units.CELSIUS);
 
     DailyForecast sevenDayForecast = map.get(7);
 
     sevenDayOfWeek.setText(sevenDayForecast.getDayOfWeek());
     sevenDayImg.setImage(sevenDayForecast.getIcon());
-    sevenDayMin.setText(sevenDayForecast.getTempMin() + Metrics.CELSIUS);
-    sevenDayMax.setText(sevenDayForecast.getTempMax() + Metrics.CELSIUS);
+    sevenDayMin.setText(sevenDayForecast.getTempMin() + Units.CELSIUS);
+    sevenDayMax.setText(sevenDayForecast.getTempMax() + Units.CELSIUS);
   }
 }

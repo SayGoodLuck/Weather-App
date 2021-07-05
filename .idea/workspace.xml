@@ -9,39 +9,41 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="ref packages">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_17_ea_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_17_ea_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_17_ea_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_17_ea_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_17_ea_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_17_ea_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_17_ea_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_media_win_17_ea_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_web_17_ea_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_web_win_17_ea_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/b/2b5a4db37d0e2532d32fb3812388f5a985ccc5ac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/a/8a88dfd5af6f2db5a5431581b56e901f5f143d92" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/3/9374dbbf5f935279edfa8c37e350c2d044212d6b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/7/b7d5711bf023dcad04ed402da03a370370155c63" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f01fa3cc38467805c9ad58fa176b2fe7146a6a5c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f6022cdee554c4a3311fa1d27d884698c7f4dbf8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/5/05ec0aa0d9d1152be2d26019649757a9eab46909" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9b8e432a1ff1a5b795506b4ff6be826a76ec0dac" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/0/a09a658df0a4c5b6b128a21cb1ba2c700320c749" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/8/d897d64d51bb569b4f63e82551d750dcf174cae6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/3/e3d5ba0b1e8700a1e2402445d5573928b7dee8e9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/ede9824103efc3cfbd9e4133afa851c7f5bc194a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/f/ef49582ed6d6f6f4a538a87749851efeb8834b96" beforeDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="little improve">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_9_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_21_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/f/1fc2330ddc6fae53fbf33a6f88113ec571a69f06" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/c/4c5929827c748689b508c0b6efdc98422b7af2ea" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5ee3e8bbac7aa1f1d233000fbd9ced6129337265" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c001603a127b1c360fcd05ea10ab970169208c9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c4a756909c42fd0bfef07dd0714912830029f88" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/6/76ac6ac058639742f73ba7b22b9210d51a7e8826" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/4/940f413d7628fe9df81ae72a383e52dd99f286a5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/f/af3afab7033a790675648d8bdc16ef3c80f0cc81" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/4/b4aa98262fe5ee0134ccdbf0526c07e33fe6c6f5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/a/ba21518f690dcee68bce6b7ca0bb157b8ab56625" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bf5b3c3f82ea947632a6a19020bd035da946d9f0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/1/c181695b9f80835dcf52e140a49d3ca4781bdaa1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/b/eba21140062fa4b94ef0b6aa022362014e62064c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/e/fe99afff12201530a9da0729cf4e5e41d3a8a4ea" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dev/konstantin/CityTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/dev/konstantin/WeatherManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/konstantin/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/konstantin/MyOwnException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/exceptions/WeatherManagerException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/konstantin/controllers/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/controllers/WeatherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/konstantin/models/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/models/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/konstantin/models/DailyForecast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/models/DailyForecast.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/konstantin/service/WeatherManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/service/WeatherManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/weather-app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/weather-app.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +199,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../libs/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib/javafx.web.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TrainingBritenet/pesel_service/konstantin2" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -217,7 +219,7 @@
       <recent name="D:\CodeWorkspace\java\Weather\src\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.WeatherManagerTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -276,6 +278,105 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WeatherManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="weather-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.konstantin.exceptions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dev.konstantin" />
+      <option name="MAIN_CLASS_NAME" value="dev.konstantin.WeatherManagerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WeatherManagerTest.getSevenDaysForecastArgIsCyrillic" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="weather-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.konstantin.exceptions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dev.konstantin" />
+      <option name="MAIN_CLASS_NAME" value="dev.konstantin.WeatherManagerTest" />
+      <option name="METHOD_NAME" value="getSevenDaysForecastArgIsCyrillic" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WeatherManagerTest.getSevenDaysForecastArgIsEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="weather-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.konstantin.exceptions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dev.konstantin" />
+      <option name="MAIN_CLASS_NAME" value="dev.konstantin.WeatherManagerTest" />
+      <option name="METHOD_NAME" value="getSevenDaysForecastArgIsEmpty" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WeatherManagerTest.getSevenDaysForecastArgIsNumeric" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="weather-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.konstantin.exceptions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dev.konstantin" />
+      <option name="MAIN_CLASS_NAME" value="dev.konstantin.WeatherManagerTest" />
+      <option name="METHOD_NAME" value="getSevenDaysForecastArgIsNumeric" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WeatherManagerTest.timeStampConvertTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="weather-app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dev.konstantin.exceptions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dev.konstantin" />
+      <option name="MAIN_CLASS_NAME" value="dev.konstantin.WeatherManagerTest" />
+      <option name="METHOD_NAME" value="timeStampConvertTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -310,7 +411,21 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.SuperMain" />
+      <item itemvalue="JUnit.WeatherManagerTest.getSevenDaysForecastArgIsEmpty" />
+      <item itemvalue="JUnit.WeatherManagerTest.getSevenDaysForecastArgIsNumeric" />
+      <item itemvalue="JUnit.WeatherManagerTest.getSevenDaysForecastArgIsCyrillic" />
+      <item itemvalue="JUnit.WeatherManagerTest.timeStampConvertTest" />
+      <item itemvalue="JUnit.WeatherManagerTest" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.WeatherManagerTest" />
+        <item itemvalue="JUnit.WeatherManagerTest.timeStampConvertTest" />
+        <item itemvalue="JUnit.WeatherManagerTest.getSevenDaysForecastArgIsCyrillic" />
+        <item itemvalue="JUnit.WeatherManagerTest.getSevenDaysForecastArgIsEmpty" />
+        <item itemvalue="JUnit.WeatherManagerTest.getSevenDaysForecastArgIsNumeric" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -351,7 +466,9 @@
       <workItem from="1625324811460" duration="200000" />
       <workItem from="1625395405589" duration="2803000" />
       <workItem from="1625399896189" duration="2082000" />
-      <workItem from="1625420240190" duration="6191000" />
+      <workItem from="1625420240190" duration="10029000" />
+      <workItem from="1625502412990" duration="2921000" />
+      <workItem from="1625516513681" duration="3766000" />
     </task>
     <task id="LOCAL-00001" summary="error fix.&#10;added icons and more info">
       <created>1623428623704</created>
@@ -521,7 +638,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625399303227</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="little improve">
+      <created>1625427576125</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1625427576125</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -599,7 +723,8 @@
     <MESSAGE value="you can run it from maven only with mvn clean javafx:run" />
     <MESSAGE value="added shading maven plugin &#10;run it with mvn package" />
     <MESSAGE value="ref packages" />
-    <option name="LAST_COMMIT_MESSAGE" value="ref packages" />
+    <MESSAGE value="little improve" />
+    <option name="LAST_COMMIT_MESSAGE" value="little improve" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
