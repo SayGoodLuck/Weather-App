@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -127,11 +128,10 @@ public class WeatherController {
         });
   }
 
-  public void getContent(String city) throws WeatherManagerException {
+  public void getContent(@NotNull String city) throws WeatherManagerException {
 
     if (city.isEmpty()) {
-      System.out.println("city is null");
-      return;
+     throw new WeatherManagerException("string is empty.");
     }
 
     var weatherManager = new WeatherManager();
@@ -142,7 +142,7 @@ public class WeatherController {
     currentDayTime.setText(weatherManager.getCurrentDayTime());
 
     tempInfo.setText(currentDayForecast.getDayTemp() + Units.CELSIUS);
-    tempFeels.setText(currentDayForecast.getTempFeelsLike());
+    tempFeels.setText(currentDayForecast.getTempFeelsLike() + Units.CELSIUS);
     tempMax.setText(currentDayForecast.getTempMax() + Units.CELSIUS);
     tempMin.setText(currentDayForecast.getTempMin() + Units.CELSIUS);
     tempCity.setText(

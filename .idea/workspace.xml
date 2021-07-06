@@ -10,40 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="little improve">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_21_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/f/1fc2330ddc6fae53fbf33a6f88113ec571a69f06" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/c/4c5929827c748689b508c0b6efdc98422b7af2ea" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5ee3e8bbac7aa1f1d233000fbd9ced6129337265" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c001603a127b1c360fcd05ea10ab970169208c9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c4a756909c42fd0bfef07dd0714912830029f88" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/6/76ac6ac058639742f73ba7b22b9210d51a7e8826" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/4/940f413d7628fe9df81ae72a383e52dd99f286a5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/f/af3afab7033a790675648d8bdc16ef3c80f0cc81" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/4/b4aa98262fe5ee0134ccdbf0526c07e33fe6c6f5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/a/ba21518f690dcee68bce6b7ca0bb157b8ab56625" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/f/bf5b3c3f82ea947632a6a19020bd035da946d9f0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/1/c181695b9f80835dcf52e140a49d3ca4781bdaa1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/b/eba21140062fa4b94ef0b6aa022362014e62064c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/e/fe99afff12201530a9da0729cf4e5e41d3a8a4ea" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dev/konstantin/CityTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dev/konstantin/WeatherManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f6022cdee554c4a3311fa1d27d884698c7f4dbf8" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f6022cdee554c4a3311fa1d27d884698c7f4dbf8" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/konstantin/MyOwnException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/exceptions/WeatherManagerException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/konstantin/controllers/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/controllers/WeatherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/konstantin/models/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/models/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/konstantin/models/DailyForecast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/models/DailyForecast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/konstantin/service/WeatherManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/service/WeatherManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/weather-app.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +189,7 @@
       <recent name="D:\CodeWorkspace\java\Weather\src\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.WeatherManagerTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -263,17 +233,6 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -468,7 +427,8 @@
       <workItem from="1625399896189" duration="2082000" />
       <workItem from="1625420240190" duration="10029000" />
       <workItem from="1625502412990" duration="2921000" />
-      <workItem from="1625516513681" duration="3766000" />
+      <workItem from="1625516513681" duration="4033000" />
+      <workItem from="1625520693903" duration="34000" />
     </task>
     <task id="LOCAL-00001" summary="error fix.&#10;added icons and more info">
       <created>1623428623704</created>
@@ -645,7 +605,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625427576125</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="little improve">
+      <created>1625520413581</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1625520413581</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

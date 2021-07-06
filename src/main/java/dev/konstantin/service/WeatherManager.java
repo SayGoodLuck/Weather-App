@@ -27,10 +27,6 @@ public class WeatherManager {
 
   public List<DailyForecast> getSevenDaysForecast(@NotNull String cityName) throws WeatherManagerException {
 
-    if (cityName.isEmpty()) {
-      throw new WeatherManagerException("String is empty");
-    }
-
     List<DailyForecast> dailyForecasts = new ArrayList<>();
 
     var city = getCityInfo(cityName);
