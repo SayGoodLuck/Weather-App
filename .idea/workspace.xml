@@ -10,10 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="little improve">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f6022cdee554c4a3311fa1d27d884698c7f4dbf8" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f6022cdee554c4a3311fa1d27d884698c7f4dbf8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/konstantin/controllers/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/konstantin/controllers/WeatherController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,6 +234,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WeatherManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="weather-app" />
       <extension name="coverage">
@@ -429,6 +437,8 @@
       <workItem from="1625502412990" duration="2921000" />
       <workItem from="1625516513681" duration="4033000" />
       <workItem from="1625520693903" duration="34000" />
+      <workItem from="1625581759491" duration="708000" />
+      <workItem from="1625915241851" duration="1166000" />
     </task>
     <task id="LOCAL-00001" summary="error fix.&#10;added icons and more info">
       <created>1623428623704</created>
@@ -612,7 +622,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625520413581</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="little improve">
+      <created>1625581864301</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1625581864301</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
